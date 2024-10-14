@@ -1,4 +1,5 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- eslint-disable vue/multi-word-component-names -->
+<template><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_dd_175_9)">
 <rect x="8" y="4" width="48" height="48" rx="8" fill="#DDC99C" shape-rendering="crispEdges"/>
 <rect x="6" y="2" width="52" height="52" rx="10" stroke="#654930" stroke-width="4" shape-rendering="crispEdges"/>
@@ -23,4 +24,4 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_175_9" result="shape"/>
 </filter>
 </defs>
-</svg>
+</svg></template>
