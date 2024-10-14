@@ -4,11 +4,13 @@ import { RouterView } from 'vue-router';
 </script>
 
 <template>
-    <main class="flex justify-center items-center min-h-screen overflow-hidden">
-        <img 
+  <main class="flex justify-center items-center min-h-screen overflow-hidden">
+    <div class="relative w-full h-full flex justify-center items-center">
+      <img 
         src="/src/assets/Portfolio Sam V2.webp" 
         alt="Cartographie d'un continent dans un style fantastique avec un effet de parchemin"
         class="max-w-full max-h-full object-contain">
-        <RouterView/>
-    </main>
+    </div>
+    <RouterView/>
+  </main>
 </template>
