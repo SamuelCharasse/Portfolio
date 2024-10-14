@@ -5,7 +5,7 @@ import Loginout from './components/loginout.vue';
 
 <template>
   <div>
-    <h1 class="text-3xl font-extrabold">Vue 3 + Vite + TypeScript</h1>
+    <h1 class="text-3xl font-extrabold">Portfolio</h1>
     <Loginout />
     <div>
       <nav>
