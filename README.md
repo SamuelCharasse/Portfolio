@@ -1,39 +1,27 @@
-# template-vue-pocketbase
+# Projet Individuel - Portfolio 
 
-This template should help get you started developing with Vue 3 in Vite.
+Bienvenue dans mon projet de portfolio personnel. Ce projet utilise les technologies suivantes :
 
-## Recommended IDE Setup
+- **VueJS** : Un framework JavaScript progressif pour construire des interfaces utilisateur.
+- **TailwindCSS** : Un framework CSS utilitaire pour un développement rapide et flexible.
+- **PocketBase** : Un backend open-source pour gérer les bases de données et l'authentification.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Description
 
-## Type Support for `.vue` Imports in TS
+Ce site se veut immersif et interactif, avec une utilisation notable d'une librairie JavaScript pour la gestion du son, offrant ainsi une expérience utilisateur enrichie. Le site est connecté à une base de données qui peut être éditée directement depuis l'interface du site.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Fonctionnalités
 
-## Customize configuration
+- **Interface Utilisateur** : Construite avec VueJS pour une expérience utilisateur réactive et dynamique.
+- **Styles** : Stylisé avec TailwindCSS pour une conception rapide et personnalisable.
+- **Backend** : Utilisation de PocketBase pour la gestion des données et l'authentification des utilisateurs.
+- **Gestion du Son** : Intégration d'une librairie JavaScript pour une gestion avancée du son, rendant le site plus immersif.
+- **Édition de la Base de Données** : Les utilisateurs peuvent éditer les données directement depuis le site.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Remerciements
 
-## Project Setup
+Merci à toutes les personnes qui ont contribué à ce projet et aux créateurs des technologies utilisées.
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Pour plus d'informations, veuillez consulter la documentation officielle de [VueJS](https://vuejs.org/), [TailwindCSS](https://tailwindcss.com/), et [PocketBase](https://pocketbase.io/).
