@@ -16,7 +16,7 @@ Ce site se veut immersif et interactif, avec une utilisation notable d'une libra
 - **Styles** : Stylisé avec TailwindCSS pour une conception rapide et personnalisable.
 - **Backend** : Utilisation de PocketBase pour la gestion des données et l'authentification des utilisateurs.
 - **Gestion du Son** : Intégration d'une librairie JavaScript pour une gestion avancée du son, rendant le site plus immersif.
-- **Édition de la Base de Données** : Les utilisateurs peuvent éditer les données directement depuis le site.
+- **Édition de la Base de Données** : Seul l'administrateur éditer les données directement depuis le site.
 
 ## Remerciements
 
