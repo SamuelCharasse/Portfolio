@@ -9,7 +9,7 @@ import Loginout from './components/loginout.vue';
     <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Itim&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
   <div>
-    <h1 class="text-3xl font-extrabold">Portfolio</h1>
+    <h1 class="text-3xl bold">Portfolio</h1>
     <Loginout />
     <div>
       <nav>
