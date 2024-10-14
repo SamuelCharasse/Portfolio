@@ -1,0 +1,2 @@
+/api/* https://portfolio-samuecharasse.pockethost.io/api/:splat 200
+/* / 200
