@@ -2,19 +2,19 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
-    @apply font-itim;
+h1,
+h2 {
+    @apply font-rowdies;
 }
 
-h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
-    @apply font-rowdies;
+    @apply font-itim;
 }
 
+body,
 p,
 span,
 div,
