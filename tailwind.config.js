@@ -19,9 +19,9 @@ export default {
         xxl: '2rem'
       },
       fontFamily: {
-        rowdies: 'Rowdies',
-        itim: 'Itim',
-        biryani: 'Biryani'
+        rowdies: ['Rowdies', 'sans-serif'],
+        itim: ['Itim', 'sans-serif'],
+        biryani: ['Biryani', 'sans-serif']
       }
     }
   },
