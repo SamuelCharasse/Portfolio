@@ -1,7 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import HelloWorld from '@/components/HelloWorld.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
