@@ -6,5 +6,5 @@ import BtnDefault from '@/components/boutons/btnDefault.vue';
 </script>
 <template>
     <h1>Guide de style</h1>
-    <BtnDefault class="">Envoyer un message</BtnDefault>
+    <BtnDefault>Envoyer un message</BtnDefault>
 </template>

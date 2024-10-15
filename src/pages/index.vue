@@ -17,7 +17,7 @@ const closeOverlay = () => {
 </script>
 
 <template>
-  <main class="relative flex justify-center items-center min-h-screen overflow-hidden">
+  <main class="relative flex justify-center items-center min-h-screen">
     <img 
       src="/src/assets/Portfolio Sam V2.webp" 
       alt="Cartographie d'un continent dans un style fantastique avec un effet de parchemin"
