@@ -12,11 +12,11 @@ import Mdi_linktree from './icons/mdi_linktree.vue'
     <ul
       class="relative flex flex-shrink-0 flex-grow-0 flex-col items-start justify-start gap-6 self-stretch"
     >
-      <RouterLink to="">Réalisations</RouterLink>
-      <RouterLink to="">Projets personnels</RouterLink>
-      <RouterLink to="">À propos</RouterLink>
+      <RouterLink to="/realisations">Réalisations</RouterLink>
+      <RouterLink to="/projectSolo">Projets personnels</RouterLink>
+      <RouterLink to="/about">À propos</RouterLink>
       <RouterLink to="">Contact</RouterLink>
-      <RouterLink to="">Mentions légales</RouterLink>
+      <RouterLink to="/legalmention">Mentions légales</RouterLink>
     </ul>
     <ul class="flex flex-shrink-0 flex-grow-0 items-center justify-start gap-8">
       <RouterLink><Mdi_github /></RouterLink>
