@@ -12,16 +12,16 @@ import Mdi_linktree from './icons/mdi_linktree.vue'
     <ul
       class="relative flex flex-shrink-0 flex-grow-0 flex-col items-start justify-start gap-6 self-stretch"
     >
-      <RouterLink to="/realisations">Réalisations</RouterLink>
-      <RouterLink to="/projectSolo">Projets personnels</RouterLink>
-      <RouterLink to="/about">À propos</RouterLink>
-      <RouterLink to="">Contact</RouterLink>
-      <RouterLink to="/legalmention">Mentions légales</RouterLink>
+      <RouterLink class="hover:font-extrabold" to="/realisations">Réalisations</RouterLink>
+      <RouterLink class="hover:font-extrabold" to="/projectSolo">Projets personnels</RouterLink>
+      <RouterLink class="hover:font-extrabold" to="/about">À propos</RouterLink>
+      <RouterLink class="hover:font-extrabold" to="">Contact</RouterLink>
+      <RouterLink class="hover:font-extrabold" to="/legalmention">Mentions légales</RouterLink>
     </ul>
     <ul class="flex flex-shrink-0 flex-grow-0 items-center justify-start gap-8">
-      <RouterLink><Mdi_github /></RouterLink>
-      <RouterLink><Mdi_linkedin /></RouterLink>
-      <RouterLink><Mdi_linktree /></RouterLink>
+      <a href="https://github.com/SamuelCharasse" target="_blank" rel="noopener"><Mdi_github class="hover:fill-DarkBrown" /></a>
+      <a href="www.linkedin.com/in/samuel-charasse" target="_blank" rel="noopener"><Mdi_linkedin class="hover:fill-DarkBrown" /></a>
+      <a href="https://linktr.ee/voxorproduction" target="_blank" rel="noopener"><Mdi_linktree class="hover:fill-DarkBrown"/></a>
     </ul>
   </div>
 </template>
