@@ -1,19 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
-import { ref } from 'vue';
-import MenuOverlay from '@/components/MenuOverlay.vue';
 import Menu from '@/components/icons/Menu.vue';
-
-const isOverlayVisible = ref(false);
-
-const openOverlay = () => {
-  isOverlayVisible.value = true;
-};
-
-const closeOverlay = () => {
-  isOverlayVisible.value = false;
-};
 </script>
 
 <template>
@@ -25,11 +13,8 @@ const closeOverlay = () => {
     
     <!-- Exemple d'élément positionné -->
     <div class="absolute top-8 left-8 z-10">
-      <Menu @click="openOverlay"/>
+      <Menu/>
     </div>
-
-    <MenuOverlay :isVisible="isOverlayVisible" @close="closeOverlay"/>
-    
     <RouterView class="relative z-10"/>
   </main>
 </template>
