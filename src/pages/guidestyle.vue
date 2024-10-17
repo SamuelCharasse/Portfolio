@@ -8,5 +8,5 @@ import Tile from '@/components/Tile.vue'
   <h1>Guide de style</h1>
   <BtnDefault>Envoyer un message</BtnDefault>
   <MenuOverlay />
-  <Tile>Réalisations</Tile>
+  <Tile></Tile>
 </template>
