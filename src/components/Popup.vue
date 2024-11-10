@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-Brown bg-opacity-50">
-    <div class="flex flex-col items-center justify-center rounded bg-gray-50 p-6 shadow-lg">
+    <div class="flex flex-col gap-4 items-center justify-center rounded bg-gray-50 p-6 shadow-lg border-Brown border-4">
       <div>
         <p>Ce site est un portfolio immersif.</p>
         <p>Il est en cours de développement et sera mis à jour régulièrement.</p>
