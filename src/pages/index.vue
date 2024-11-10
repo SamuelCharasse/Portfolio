@@ -1,7 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import { RouterView, RouterLink } from 'vue-router';
 import Menu from '@/components/icons/Menu.vue';
+import Tile from '@/components/Tile.vue';
 </script>
 
 <template>
@@ -12,8 +13,13 @@ import Menu from '@/components/icons/Menu.vue';
       class="absolute inset-0 w-full h-auto max-w-none object-cover z-0">
     
     <!-- Menu positionné -->
-    <div class="absolute top-8 left-8 z-10">
+    <div class="absolute z-10 top-[5%] left-[2.5%]">
       <Menu/>
+    </div>
+    <div class="absolute">
+      <Tile>
+        <RouterLink to="/">Test</RouterLink>
+      </Tile>
     </div>
     <RouterView class="relative z-10"/>
   </main>
