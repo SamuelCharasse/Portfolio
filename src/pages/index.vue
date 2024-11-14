@@ -28,7 +28,7 @@ const closePopup = () => {
       class="absolute inset-0 w-screen h-screen z-0">
     
     <!-- Menu positionné -->
-    <div class="absolute z-10 top-[5%] left-[2.5%]">
+    <div class="absolute z-10 top-4 left-8">
       <Menu/>
     </div>
     <div class="absolute">
