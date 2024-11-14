@@ -33,7 +33,12 @@ const closePopup = () => {
     </div>
     <div class="absolute">
       <Tile>
-        <RouterLink to="/projectSolo">Test</RouterLink>
+        <RouterLink to="/projectSolo">Projets Perso</RouterLink>
+      </Tile>
+    </div>
+    <div class="absolute right-2">
+      <Tile>
+        <RouterLink to="/about">À Propos</RouterLink>
       </Tile>
     </div>
     <RouterView class="relative z-10"/>
