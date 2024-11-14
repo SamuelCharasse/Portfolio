@@ -25,7 +25,7 @@ const closePopup = () => {
     <img 
       src="/src/assets/Portfolio Sam V2.webp" 
       alt="Cartographie d'un continent dans un style fantastique avec un effet de parchemin"
-      class="absolute inset-0 w-full h-auto max-w-none object-cover z-0">
+      class="absolute inset-0 w-screen h-screen z-0">
     
     <!-- Menu positionné -->
     <div class="absolute z-10 top-[5%] left-[2.5%]">
