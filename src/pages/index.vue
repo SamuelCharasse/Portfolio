@@ -61,10 +61,14 @@ const handleClickOutside = (event: MouseEvent) => {
     <img
       src="/src/assets/Portfolio Sam V2.webp"
       alt="Cartographie d'un continent dans un style fantastique avec un effet de parchemin"
+      class="absolute inset-0 w-screen h-screen z-0">
+    
       class="absolute inset-0 z-0 h-auto w-full max-w-none object-cover"
     />
 
     <!-- Menu positionné -->
+    <div class="absolute z-10 top-4 left-8">
+      <Menu/>
     <div class="absolute left-[2.5%] top-[5%] z-10">
       <Menu @click="toggleOverlayMenu" class="menu-icon" />
       <!-- Menu overlay -->
@@ -72,7 +76,12 @@ const handleClickOutside = (event: MouseEvent) => {
     </div>
     <div class="absolute">
       <Tile>
-        <RouterLink to="/">Test</RouterLink>
+        <RouterLink to="/projectSolo">Projets Perso</RouterLink>
+      </Tile>
+    </div>
+    <div class="absolute right-2">
+      <Tile>
+        <RouterLink to="/about">À Propos</RouterLink>
       </Tile>
     </div>
     <div class="absolute bottom-[5%] right-[2.5%] z-10">

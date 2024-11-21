@@ -10,14 +10,6 @@ export default {
         Fond1: '#ddc99c',
         White: '#fff8ea'
       },
-      fontSize: {
-        xs: '0.75rem',
-        sm: '0.875rem',
-        base: '1rem',
-        lg: '1.125rem',
-        xl: '1.5rem',
-        xxl: '2rem'
-      },
       fontFamily: {
         rowdies: ['Rowdies', 'sans-serif'],
         itim: ['Itim', 'sans-serif'],

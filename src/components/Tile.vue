@@ -6,8 +6,8 @@ import TileSection from '@/components/TileSection.vue'
 <template>
   <div class="relative flex w-max items-center">
     <TileSection class="w-full" />
-    <h2 class="absolute left-0 right-0 top-4 flex items-center justify-center">
+    <h3 class="absolute left-0 right-0 top-4 flex items-center justify-center">
       <slot>Projets personnels</slot>
-    </h2>
+    </h3>
   </div>
 </template>
