@@ -14,6 +14,9 @@ export default {
         rowdies: ['Rowdies', 'sans-serif'],
         itim: ['Itim', 'sans-serif'],
         biryani: ['Biryani', 'sans-serif']
+      },
+      fontWeight: {
+        biryaniBold: '700'
       }
     }
   },

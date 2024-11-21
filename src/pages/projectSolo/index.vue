@@ -1,17 +1,72 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import Separateur1 from '@/components/icons/separateur1.vue';
+import Separateur1 from '@/components/icons/separateur1.vue'
+import Separateur2 from '@/components/icons/separateur2.vue'
+import Separateur3 from '@/components/icons/separateur3.vue'
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="-z-10 fixed">
+  <div class="fixed -z-10">
     <img src="/src/assets/ScrollBackground2.webp" alt="" />
   </div>
-  <main class="p-32 h-screen">
-    <div class="flex flex-col bg-LightBrown w-full h-full p-2 gap-4 items-center">
-        <Separateur1 />
-        <h2>Idralwel - Tales of Aeshan</h2>
+  <main class="h-screen p-32">
+    <div class="flex h-full w-full flex-col items-center gap-4 bg-LightBrown p-2">
+      <Separateur1 class="w-full" />
+      <h1>Idralwel - Tales of Aeshan</h1>
+      <div class="w-fill px-32">
+        <p class="font-biryaniBold">
+          Dans les profondeurs d'un monde virtuel, une légende prend vie. Laissez-moi vous conter
+          l'épopée d'Idralwel - Tales of Aeshan, un projet né de la passion et forgé par la
+          persévérance.
+        </p>
+      </div>
+      <Separateur2 />
+      <h2>L'infini à portée de main</h2>
+      <div class="flex gap-8 px-32">
+        <p>
+          En 2014, tel un grimoire ancien, le projet s'ouvrit sous le nom mystérieux de "7 livres".
+          Comme toute grande aventure, son chemin fut parsemé d'embûches et de détours. Pendant six
+          longues années, une équipe de bénévoles dévoués œuvra dans l'ombre, donnant vie à un
+          univers MMORPG au sein de Minecraft. En 2020, après un labeur acharné, l'alpha d'Idralwel
+          vit enfin le jour. Les joueurs purent explorer les terres d'Aeshan, affronter des
+          créatures fantastiques et percer les secrets d'un monde médiéval-fantastique
+          minutieusement construit. Mais comme le phénix qui renaît de ses cendres, la fin de cette
+          version marqua le début d'une nouvelle ère.Le cœur battant du projet, ses membres les plus
+          dévoués, refusa de baisser les bras. Tels des alchimistes, ils transformèrent leur vision.
+          En quelques mois à peine, une idée plus réalisable mais tout aussi captivante émergea des
+          braises de l'ancien projet.
+        </p>
+        <p>
+          Aujourd'hui, Idralwel - Tales of Aeshan renaît sous la forme d'un RPG immersif. Que vous
+          soyez un héros solitaire ou entouré de compagnons, les terres d'Aeshan vous attendent.
+          Chaque recoin de ce monde recèle des aventures palpitantes, des quêtes épiques et des
+          mystères à élucider. La magie d'Idralwel réside dans sa rejouabilité infinie. Chaque
+          partie promet d'être unique, chaque choix de façonner votre destin. Les possibilités sont
+          aussi vastes que l'imagination de ses créateurs. En tant que membre de cette équipe
+          passionnée, j'ai eu l'honneur de contribuer à la gestion du projet, à la rédaction de son
+          histoire riche, et à la coordination de nos talentueux bénévoles. Ensemble, nous avons
+          appris à travailler en équipe, surmontant les défis avec créativité et détermination.
+          Idralwel - Tales of Aeshan n'est pas qu'un simple jeu. C'est le fruit d'un rêve collectif,
+          une odyssée numérique qui continue d'évoluer. Et qui sait quelles merveilles l'avenir nous
+          réserve dans ce monde en perpétuelle expansion ?
+        </p>
+      </div>
+      <Separateur3 />
+      <div class="w-fill px-32">
+        <p>
+          Pour conclure cette épopée, un chapitre inattendu s'est écrit dans l'histoire d'Idralwel -
+          Tales of Aeshan. En mars 2024, les gardiens de ce monde virtuel ont pris la décision de
+          fermer les portes du RPG, marquant la fin d'une ère mais pas celle de l'univers d'Aeshan.
+          Cette décision, bien que difficile, ouvre la voie à de nouvelles aventures. L'équipe,
+          reconnaissante envers sa communauté fidèle, envisage désormais de faire vivre Aeshan sous
+          d'autres formes : romans, bandes dessinées, podcasts... Ainsi, l'esprit d'Idralwel
+          perdure, se transforme, prêt à enchanter de nouveaux horizons. Ce n'est pas une fin, mais
+          une métamorphose, promettant de nouvelles découvertes pour tous ceux qui ont un jour foulé
+          les terres magiques d'Aeshan.
+        </p>
+      </div>
+      <Separateur3 />
     </div>
   </main>
 </template>
