@@ -67,9 +67,7 @@ const handleClickOutside = (event: MouseEvent) => {
     />
 
     <!-- Menu positionné -->
-    <div class="absolute z-10 top-4 left-8">
-      <Menu/>
-    <div class="absolute left-[2.5%] top-[5%] z-10">
+    <div class="absolute left-[2.5%] top-[2.5%] z-10">
       <Menu @click="toggleOverlayMenu" class="menu-icon" />
       <!-- Menu overlay -->
       <MenuOverlay class="mt-2 overlay-menu" v-if="showOverlayMenu" />
@@ -84,7 +82,7 @@ const handleClickOutside = (event: MouseEvent) => {
         <RouterLink to="/about">À Propos</RouterLink>
       </Tile>
     </div>
-    <div class="absolute bottom-[5%] right-[2.5%] z-10">
+    <div class="absolute bottom-[2.5%] right-[2.5%] z-10">
       <SoundOn v-if="isSoundOn" @click="toggleSound"></SoundOn>
       <SoundOff v-else @click="toggleSound"></SoundOff>
     </div>
