@@ -23,13 +23,13 @@ const closePopup = () => {
 <template>
   <main class="relative flex justify-center items-center min-h-screen">
     <img 
-      src="/src/assets/Portfolio Sam V2.webp" 
+      src="/public/Portfolio Sam V2.webp" 
       alt="Cartographie d'un continent dans un style fantastique avec un effet de parchemin"
       class="absolute inset-0 w-screen h-screen z-0">
     
     <!-- Menu positionné -->
     <div class="absolute z-10 top-4 left-8">
-      <Menu/>
+      <Menu />
     </div>
     <div class="absolute">
       <Tile>

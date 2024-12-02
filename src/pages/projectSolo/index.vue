@@ -6,7 +6,7 @@ import Separateur1 from '@/components/icons/separateur1.vue';
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="-z-10 fixed">
-    <img src="/src/assets/ScrollBackground2.webp" alt="" />
+    <img src="/public/ScrollBackground2.webp" alt="" />
   </div>
   <main class="p-32 h-screen">
     <div class="flex flex-col bg-LightBrown w-full h-full p-2 gap-4 items-center">
