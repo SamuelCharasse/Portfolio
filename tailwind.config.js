@@ -7,7 +7,6 @@ export default {
         LightBrown: '#ddc99c',
         Brown: '#654930',
         DarkBrown: '#3f2a13',
-        Fond1: '#ddc99c',
         White: '#fff8ea'
       },
       fontFamily: {
