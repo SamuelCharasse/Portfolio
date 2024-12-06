@@ -6,7 +6,7 @@ import Mdi_linktree from './icons/mdi_linktree.vue'
 
 <template>
   <div
-    class="flex w-max flex-col items-center justify-start gap-8 rounded-lg border-[3px] border-Brown bg-LightBrown p-6"
+    class="flex w-max flex-col items-center justify-start z-10 gap-8 rounded-lg border-[3px] border-Brown bg-LightBrown p-6"
     style="box-shadow: 4px 8px 4px 0 rgba(0, 0, 0, 0.25)"
   >
     <ul

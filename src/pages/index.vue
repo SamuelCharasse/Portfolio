@@ -3,6 +3,7 @@
 import { ref, onMounted } from 'vue';
 import { RouterView, RouterLink } from 'vue-router';
 import Menu from '@/components/icons/Menu.vue';
+import MenuOverlay from '@/components/MenuOverlay.vue';
 import Tile from '@/components/Tile.vue';
 import Popup from '@/components/Popup.vue';
 
@@ -18,6 +19,17 @@ onMounted(() => {
 const closePopup = () => {
   showPopup.value = false;
 };
+
+const showMenuOverlay = ref(false);
+
+const toggleMenuOverlay = () => {
+  showMenuOverlay.value = !showMenuOverlay.value;
+};
+
+const closeMenuOverlay = () => {
+  showMenuOverlay.value = false;
+};
+
 </script>
 
 <template>
@@ -29,8 +41,9 @@ const closePopup = () => {
     
     <!-- Menu positionné -->
     <div class="absolute z-10 top-4 left-8">
-      <Menu />
+      <Menu @click="toggleMenuOverlay" />
     </div>
+    <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay"/>
     <div class="absolute">
       <Tile>
         <RouterLink to="/projectSolo">Projets Perso</RouterLink>
