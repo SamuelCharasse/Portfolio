@@ -64,7 +64,8 @@ import Arrow from '@/components/icons/Arrow.vue';
             compétences.
           </p>
         </section>
-        <section class="*:flex *:flex-col *:items-center">
+        <Separateur3 />
+        <section class="*:flex *:flex-col *:items-center *:space-y-8">
           <div>
             <h2>Expériences professionnelles</h2>
             <div class="grid grid-cols-3 gap-2 w-full">
