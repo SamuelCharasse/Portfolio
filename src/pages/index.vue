@@ -34,7 +34,7 @@ const closeMenuOverlay = () => {
 <template>
   <main class="relative flex min-h-screen items-center justify-center">
     <img
-      src="/public/Portfolio Sam V2.webp"
+      src="/public/PortfolioSamV2.webp"
       alt="Cartographie d'un continent dans un style fantastique avec un effet de parchemin"
       class="absolute inset-0 z-0 h-screen w-screen"
     />

@@ -5,6 +5,7 @@ import SoundOff from '@/components/icons/soundOff.vue'
 import SoundOn from '@/components/icons/soundOn.vue'
 import MenuOverlay from '@/components/MenuOverlay.vue'
 import Tile from '@/components/Tile.vue'
+import ImageTemplate from '@/components/ImageTemplate.vue'
 import { ref } from 'vue'
 
 const isSoundOn = ref(true)
@@ -21,5 +22,6 @@ const toggleSound = () => {
     <Tile></Tile>
     <SoundOn v-if="isSoundOn" @click="toggleSound"></SoundOn>
     <SoundOff v-else @click="toggleSound"></SoundOff>
+    <ImageTemplate imageUrl="/public/IdralwelAventurier.webp" caption="Image de fond" />
   </div>
 </template>
