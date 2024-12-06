@@ -61,7 +61,7 @@ const closeMenuOverlay = () => {
     </div>
     <div class="absolute top-2">
       <Tile>
-        Contact
+        <RouterLink to="/">Contact</RouterLink>
       </Tile>
     </div>
     <RouterView class="relative z-10" />
