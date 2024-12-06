@@ -54,6 +54,16 @@ const closeMenuOverlay = () => {
         <RouterLink to="/about">À Propos</RouterLink>
       </Tile>
     </div>
+    <div class="absolute left-2">
+      <Tile>
+        <RouterLink to="/realisations">Réalisations</RouterLink>
+      </Tile>
+    </div>
+    <div class="absolute top-2">
+      <Tile>
+        Contact
+      </Tile>
+    </div>
     <RouterView class="relative z-10" />
 
     <!-- Pop-up -->
