@@ -21,7 +21,7 @@ import ImageTemplate from '@/components/ImageTemplate.vue'
           persévérance.
         </p>
       </div>
-      <ImageTemplate imageUrl="/IdralwelAventurier.webp" caption="Image de fond" />
+      <ImageTemplate imageUrl="/IdralwelCarte.webp" caption="Carte du Royaume de Canaan" />
       <Separateur2 />
       <div>
         <h2>L'infini à portée de main</h2>
@@ -56,6 +56,10 @@ import ImageTemplate from '@/components/ImageTemplate.vue'
         </p>
       </div>
       <Separateur3 />
+      <div class="flex gap-8">
+        <ImageTemplate imageUrl="/IdralwelAventurier.webp" caption="Capture de jeu représentant trois aventuriers" />
+        <ImageTemplate imageUrl="/IdralwelEtang.webp" caption="Capture de jeu d'un étang dans une forêt" />
+      </div>
     </div>
   </div>
 </template>
