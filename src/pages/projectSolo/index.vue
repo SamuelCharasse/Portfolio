@@ -2,7 +2,8 @@
 <script setup lang="ts">
 import Separateur1 from '@/components/icons/separateur1.vue'
 import Separateur2 from '@/components/icons/separateur2.vue'
-import Separateur3 from '@/components/icons/separateur3.vue';
+import Separateur3 from '@/components/icons/separateur3.vue'
+import ImageTemplate from '@/components/ImageTemplate.vue'
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
@@ -20,6 +21,7 @@ import Separateur3 from '@/components/icons/separateur3.vue';
           persévérance.
         </p>
       </div>
+      <ImageTemplate imageUrl="/IdralwelAventurier.webp" caption="Image de fond" />
       <Separateur2 />
       <div>
         <h2>L'infini à portée de main</h2>

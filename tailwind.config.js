@@ -16,7 +16,7 @@ export default {
       },
       fontSize: {
         lightText: ['12px',{
-          fontWeight: '200'
+          fontWeight: '300'
         }]
       },
       boxShadow: {
