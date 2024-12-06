@@ -15,13 +15,13 @@ const toggleSound = () => {
 }
 </script>
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4 p-6">
     <h1>Guide de style</h1>
     <BtnDefault>Envoyer un message</BtnDefault>
     <MenuOverlay />
     <Tile></Tile>
     <SoundOn v-if="isSoundOn" @click="toggleSound"></SoundOn>
     <SoundOff v-else @click="toggleSound"></SoundOff>
-    <ImageTemplate imageUrl="/public/IdralwelAventurier.webp" caption="Image de fond" />
+    <ImageTemplate imageUrl="/IdralwelAventurier.webp" caption="Image de fond" />
   </div>
 </template>

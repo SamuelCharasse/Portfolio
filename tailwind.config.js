@@ -13,7 +13,15 @@ export default {
         rowdies: ['Rowdies', 'sans-serif'],
         itim: ['Itim', 'sans-serif'],
         biryani: ['Biryani', 'sans-serif']
-      }
+      },
+      fontSize: {
+        lightText: ['12px',{
+          fontWeight: '200'
+        }]
+      },
+      boxShadow: {
+        'shadow-4': '4px 4px 4px 0 rgba(0, 0, 0, 1)'
+      },
     }
   },
   plugins: []
