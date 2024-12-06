@@ -7,12 +7,11 @@ import MenuOverlay from '@/components/MenuOverlay.vue'
 import Tile from '@/components/Tile.vue'
 import { ref } from 'vue'
 
-const isSoundOn = ref(true);
+const isSoundOn = ref(true)
 
 const toggleSound = () => {
-  isSoundOn.value = !isSoundOn.value;
-};
-
+  isSoundOn.value = !isSoundOn.value
+}
 </script>
 <template>
   <div class="flex flex-col gap-4">
