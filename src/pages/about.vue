@@ -4,7 +4,13 @@ import Separateur1 from '@/components/icons/separateur1.vue'
 import Separateur2 from '@/components/icons/separateur2.vue'
 import CardAbout from '@/components/CardAbout.vue'
 import Separateur3 from '@/components/icons/separateur3.vue'
-import Arrow from '@/components/icons/Arrow.vue';
+import Arrow from '@/components/icons/Arrow.vue'
+import Pocketbase from 'pocketbase'
+import { ref } from 'vue'
+
+const pb = new Pocketbase('https://portfolio-samuecharasse.pockethost.io/')
+
+const CardData = ref<RecordModel[]>([])
 </script>
 
 <template>
@@ -109,7 +115,7 @@ import Arrow from '@/components/icons/Arrow.vue';
               <CardAbout
                 v-for="i in 12"
                 :key="i"
-                type="job"
+                type="other"
                 title="Animateur Radio"
                 location="Radio Campus Toulouse"
                 period="2018-2021"
