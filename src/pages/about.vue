@@ -40,7 +40,7 @@ onMounted(async () => {
       >
         <section class="flex flex-col items-center">
           <Separateur1 />
-          <img src="" alt="" />
+          <img src="/Avatar.webp" alt="" class="w-60 rounded-full" />
           <h1>Mon histoire</h1>
           <p>
             Éternel curieux et touche à tout, je me lance parfois des défis farfelus ou dans des
