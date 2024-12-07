@@ -10,18 +10,26 @@ import type { RecordModel } from 'pocketbase'
 import { ref, onMounted } from 'vue'
 
 const pb = new Pocketbase('https://portfolio-samuecharasse.pockethost.io/')
-const CardData = ref<RecordModel[]>([])
+const CardData = ref<RecordModel[]>([]);
+const jobCards = ref<RecordModel[]>([]);
 
 onMounted(async () => {
   try {
-    const records = await pb.collection('CARDABOUT').getList(1, 50, {
+    // Récupération des cards de type "job"
+    const jobRecords = await pb.collection('CARDABOUT').getFullList({
+      filter: 'type = "job"'
+    });
+    jobCards.value = jobRecords;
+
+    // Récupération des cards de type "other"
+    const otherRecords = await pb.collection('CARDABOUT').getFullList({
       filter: 'type = "other"'
-    })
-    CardData.value = records.items
+    });
+    CardData.value = otherRecords;
   } catch (error) {
-    console.error('Error fetching records:', error)
+    console.error('Error fetching records:', error);
   }
-})
+});
 </script>
 
 <template>
@@ -89,12 +97,12 @@ onMounted(async () => {
             <h2>Expériences professionnelles</h2>
             <div class="grid w-full grid-cols-3 gap-2">
               <CardAbout
-                v-for="i in 5"
-                :key="i"
-                type="job"
-                title="Animateur Radio"
-                location="Radio Campus Toulouse"
-                period="2018-2021"
+                v-for="card in jobCards"
+                :key="card.id"
+                :type="card.type"
+                :title="card.title"
+                :location="card.location"
+                :period="card.period"
               />
             </div>
             <p>
