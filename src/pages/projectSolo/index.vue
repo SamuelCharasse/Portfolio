@@ -3,25 +3,11 @@
 import Separateur1 from '@/components/icons/separateur1.vue'
 import Separateur2 from '@/components/icons/separateur2.vue'
 import Separateur3 from '@/components/icons/separateur3.vue'
-<<<<<<< HEAD
-=======
 import ImageTemplate from '@/components/ImageTemplate.vue'
->>>>>>> 6da4269110b2cb36505c8f2d2ef0e86913133cca
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-<<<<<<< HEAD
-  <div class="fixed -z-10">
-    <img src="/src/assets/ScrollBackground2.webp" alt="" />
-  </div>
-  <main class="h-screen p-32">
-    <div class="flex h-full w-full flex-col items-center gap-4 bg-LightBrown p-2">
-      <Separateur1 class="w-full" />
-      <h1>Idralwel - Tales of Aeshan</h1>
-      <div class="w-fill px-32">
-        <p class="font-biryaniBold">
-=======
   <div class="bg-[url(/ScrollBackground2.webp)] h-full p-32">
     <div class="flex h-fit w-full flex-col items-center gap-4 bg-LightBrown p-2">
       <Separateur1 />
@@ -30,24 +16,17 @@ import ImageTemplate from '@/components/ImageTemplate.vue'
       </div>
       <div>
         <p>
->>>>>>> 6da4269110b2cb36505c8f2d2ef0e86913133cca
           Dans les profondeurs d'un monde virtuel, une légende prend vie. Laissez-moi vous conter
           l'épopée d'Idralwel - Tales of Aeshan, un projet né de la passion et forgé par la
           persévérance.
         </p>
       </div>
-<<<<<<< HEAD
-      <Separateur2 />
-      <h2>L'infini à portée de main</h2>
-      <div class="flex gap-8 px-32">
-=======
       <ImageTemplate imageUrl="/IdralwelCarte.webp" caption="Carte du Royaume de Canaan" />
       <Separateur2 />
       <div>
         <h2>L'infini à portée de main</h2>
       </div>
       <div class="flex px-[124px] gap-8">
->>>>>>> 6da4269110b2cb36505c8f2d2ef0e86913133cca
         <p>
           En 2014, tel un grimoire ancien, le projet s'ouvrit sous le nom mystérieux de "7 livres".
           Comme toute grande aventure, son chemin fut parsemé d'embûches et de détours. Pendant six
@@ -77,7 +56,6 @@ import ImageTemplate from '@/components/ImageTemplate.vue'
         </p>
       </div>
       <Separateur3 />
-<<<<<<< HEAD
       <div class="w-fill px-32">
         <p>
           Pour conclure cette épopée, un chapitre inattendu s'est écrit dans l'histoire d'Idralwel -
@@ -92,12 +70,10 @@ import ImageTemplate from '@/components/ImageTemplate.vue'
         </p>
       </div>
       <Separateur3 />
-=======
       <div class="flex gap-8">
         <ImageTemplate imageUrl="/IdralwelAventurier.webp" caption="Capture de jeu représentant trois aventuriers" />
         <ImageTemplate imageUrl="/IdralwelEtang.webp" caption="Capture de jeu d'un étang dans une forêt" />
       </div>
->>>>>>> 6da4269110b2cb36505c8f2d2ef0e86913133cca
     </div>
   </div>
 </template>
