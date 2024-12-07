@@ -1,18 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted} from 'vue';
 import Menu from '@/components/icons/Menu.vue';
 import Tile from '@/components/Tile.vue';
 import Popup from '@/components/Popup.vue';
 import MenuOverlay from '@/components/MenuOverlay.vue';
-import SoundOn from '@/components/icons/SoundOn.vue';
-import SoundOff from '@/components/icons/SoundOff.vue';
 
 const showPopup = ref(false);
-const showOverlayMenu = ref(false);
-const isSoundOn = ref(true);
-const router = useRouter();
 
 onMounted(() => {
   if (!localStorage.getItem('hasVisited')) {
