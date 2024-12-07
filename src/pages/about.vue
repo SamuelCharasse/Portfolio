@@ -6,17 +6,30 @@ import CardAbout from '@/components/CardAbout.vue'
 import Separateur3 from '@/components/icons/separateur3.vue'
 import Arrow from '@/components/icons/Arrow.vue'
 import Pocketbase from 'pocketbase'
-import { ref } from 'vue'
+import type { RecordModel } from 'pocketbase'
+import { ref, onMounted } from 'vue'
 
 const pb = new Pocketbase('https://portfolio-samuecharasse.pockethost.io/')
-
 const CardData = ref<RecordModel[]>([])
+
+onMounted(async () => {
+  try {
+    const records = await pb.collection('CARDABOUT').getList(1, 50, {
+      filter: 'type = "other"'
+    })
+    CardData.value = records.items
+  } catch (error) {
+    console.error('Error fetching records:', error)
+  }
+})
 </script>
 
 <template>
-  <div class="h-full w-full bg-[url(/ScrollBackground2.webp)] p-32 bg-fixed">
+  <div class="h-full w-full bg-[url(/ScrollBackground2.webp)] bg-fixed p-32">
     <div class="bg-LightBrown p-2">
-      <div class="flex flex-col items-center p-28 *:space-y-8 *:flex *:flex-col *:items-center space-y-8">
+      <div
+        class="flex flex-col items-center space-y-8 p-28 *:flex *:flex-col *:items-center *:space-y-8"
+      >
         <section class="flex flex-col items-center">
           <Separateur1 />
           <img src="" alt="" />
@@ -74,7 +87,7 @@ const CardData = ref<RecordModel[]>([])
         <section class="*:flex *:flex-col *:items-center *:space-y-8">
           <div>
             <h2>Expériences professionnelles</h2>
-            <div class="grid grid-cols-3 gap-2 w-full">
+            <div class="grid w-full grid-cols-3 gap-2">
               <CardAbout
                 v-for="i in 5"
                 :key="i"
@@ -88,20 +101,20 @@ const CardData = ref<RecordModel[]>([])
               Mon odyssée professionnelle débute chez un fromager affineur à Clermont-Ferrand, la
               fromagerie Nivesse. Dans cet antre des saveurs, j'ai plongé dans l'univers fascinant
               des produits typiques de notre terroir, apprenant l'art délicat de préparer et
-              travailler un produit vivant.<br>Ma seconde escale m'a conduit dans les coulisses de la
-              restauration, où j'ai endossé le rôle de barman dans un restaurant à Aubière. Novice
-              dans ce milieu effervescent, j'ai dû rapidement m'imprégner de ses codes. Cette
+              travailler un produit vivant.<br />Ma seconde escale m'a conduit dans les coulisses de
+              la restauration, où j'ai endossé le rôle de barman dans un restaurant à Aubière.
+              Novice dans ce milieu effervescent, j'ai dû rapidement m'imprégner de ses codes. Cette
               expérience s'est révélée être une véritable école de vie, m'offrant de précieuses
               compétences en service clientèle et la capacité de travailler sous pression. Hélas, la
               vague impitoyable de la Covid-19 a emporté cet emploi... Le destin m'a alors guidé
               vers Besançon, où j'ai trouvé refuge au sein de la voirie propreté de la ville.
               Pendant un an et demi, j'ai arpenté les rues de la cité, cultivant l'esprit d'équipe,
-              l'initiative et l'adaptabilité.<br>Ma dernière aventure en date m'a mené au Grand Bain,
-              pour un emploi d'été. Telle une étoile filante, j'ai rapidement brillé, me voyant
-              confier des responsabilités malgré mon statut d'intérimaire. Mon expérience passée de
-              barman a su me démarquer, tant auprès de la clientèle que des responsables. Cette
-              opportunité m'a permis d'affiner davantage mes compétences en travail d'équipe,
-              initiative, autonomie et relation client.<br>Aujourd'hui, mon rêve serait de devenir
+              l'initiative et l'adaptabilité.<br />Ma dernière aventure en date m'a mené au Grand
+              Bain, pour un emploi d'été. Telle une étoile filante, j'ai rapidement brillé, me
+              voyant confier des responsabilités malgré mon statut d'intérimaire. Mon expérience
+              passée de barman a su me démarquer, tant auprès de la clientèle que des responsables.
+              Cette opportunité m'a permis d'affiner davantage mes compétences en travail d'équipe,
+              initiative, autonomie et relation client.<br />Aujourd'hui, mon rêve serait de devenir
               Narrative Designer. Conscient de l'instabilité qui règne sur le marché de l'emploi
               dans le jeu vidéo, je continue à nourrir mes projets personnels, tel un jardinier
               patient, dans l'espoir qu'un jour, mes créations seront remarquées et pourront
@@ -111,14 +124,14 @@ const CardData = ref<RecordModel[]>([])
           <Separateur3 />
           <div class="w-full">
             <h2>Expériences diverses</h2>
-            <div class="grid grid-cols-3 gap-2 w-full">
+            <div class="grid w-full grid-cols-3 gap-2">
               <CardAbout
-                v-for="i in 12"
-                :key="i"
-                type="other"
-                title="Animateur Radio"
-                location="Radio Campus Toulouse"
-                period="2018-2021"
+                v-for="card in CardData"
+                :key="card.id"
+                :type="card.type"
+                :title="card.title"
+                :location="card.location"
+                :period="card.period"
               />
             </div>
           </div>
