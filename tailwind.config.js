@@ -14,11 +14,6 @@ export default {
         itim: ['Itim', 'sans-serif'],
         biryani: ['Biryani', 'sans-serif']
       },
-<<<<<<< HEAD
-      fontWeight: {
-        biryaniBold: '700'
-      }
-=======
       fontSize: {
         lightText: ['12px',{
           fontWeight: '300'
@@ -27,7 +22,6 @@ export default {
       boxShadow: {
         'shadow-4': '4px 4px 4px 0 rgba(0, 0, 0, 1)'
       },
->>>>>>> 6da4269110b2cb36505c8f2d2ef0e86913133cca
     }
   },
   plugins: []
