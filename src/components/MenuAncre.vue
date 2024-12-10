@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { RouterLink } from 'vue-router'
 
 const menuItems = [
   { id: 'Tales', label: 'Tales of Aeshan' },
@@ -44,6 +45,14 @@ onMounted(() => {
 <template>
   <nav class="fixed right-8 top-1/3 z-50">
     <ul class="flex flex-col gap-4 rounded-lg border-2 border-Brown bg-LightBrown p-4">
+        <li>
+        <RouterLink 
+          to="/"
+          class="block px-4 py-2 rounded transition-all duration-300 text-Brown hover:text-DarkBrown"
+        >
+          ← Retour à l'accueil
+        </RouterLink>
+      </li>
       <li v-for="item in menuItems" :key="item.id">
         <a 
           @click.prevent="scrollToElement(item.id)"

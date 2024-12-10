@@ -10,7 +10,7 @@ import MenuAncre from '@/components/MenuAncre.vue'
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <MenuAncre />
+  <MenuAncre />
   <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">
     <div id="Tales" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
