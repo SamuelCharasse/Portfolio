@@ -21,7 +21,7 @@ import MenuAncre from '@/components/MenuAncre.vue'
             réaliser un site mobile qui avait pour thème : “Réplique”. Site uniquement en version
             mobile !
           </p>
-          <btnDefault>Lien vers Abyssal Wave</btnDefault>
+          <btnDefault><a href="https://abyssal-wave.scharasse.fr/" target="_blank"></a>Lien vers Abyssal Wave</btnDefault>
         </div>
         <div class="flex flex-col gap-6 items-center w-fit">
           <h3>Manteco</h3>
