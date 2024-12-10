@@ -160,6 +160,8 @@ import btnDefault from '@/components/boutons/btnDefault.vue'
         </p>
       </div>
       <Separateur3 />
+      <btnDefault>Liens pour écouter la fiction sonore</btnDefault>
+      <Separateur3 />
     </div>
   </div>
 </template>

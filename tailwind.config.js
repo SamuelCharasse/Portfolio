@@ -22,7 +22,7 @@ export default {
           fontWeight: '700'
         }],
         btnText: ['18px', {
-          fontWeight: '400',
+          fontWeight: '700',
           fontFamily: 'Itim'
         }],
       },
