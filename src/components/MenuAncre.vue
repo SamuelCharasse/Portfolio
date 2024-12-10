@@ -51,8 +51,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="fixed right-8 top-1/3 z-50">
-    <ul class="flex flex-col gap-4 rounded-lg border-2 border-Brown bg-LightBrown p-4">
+  <nav class="fixed right-4 top-1/3 z-50">
+    <ul class="flex flex-col gap-4 rounded-lg border-2 border-Brown bg-LightBrown/50 hover:bg-LightBrown transition-all duration-300 p-4">
       <li>
         <RouterLink
           to="/"
