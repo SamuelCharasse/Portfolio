@@ -163,5 +163,43 @@ import btnDefault from '@/components/boutons/btnDefault.vue'
       <btnDefault>Liens pour écouter la fiction sonore</btnDefault>
       <Separateur3 />
     </div>
+    <div class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
+      <Separateur1 />
+      <h2>Les cartes d'Aeshan</h2>
+      <div class="flex gap-8 px-[124px]">
+        <p class="text-largeText">
+          Dans les brumes mystérieuses d'Aeshan, un nouveau pouvoir s'éveille - les anciennes
+          prophéties prennent vie entre vos mains, sous la forme de cartes qui vous permettent de
+          vivre d’intenses combats sur les terres sauvages d’Aeshan.
+        </p>
+      </div>
+      <ImageTemplate
+        imageUrl="/cartesAeshan.webp"
+        caption="Image générée par IA d'un jeu de cartes."
+      />
+      <Separateur2 />
+      <h3>Une nouvelle dimension</h3>
+      <div class="flex gap-8 px-[124px]">
+        <p>
+          Au cœur de l'univers enchanteur d'Aeshan, une nouvelle aventure se profile à l'horizon :
+          un jeu de cartes à jouer et à collectionner, qui promet de captiver les amateurs de
+          stratégie et les collectionneurs passionnés. Bien que ce projet soit encore à l'état
+          embryonnaire, son potentiel est aussi vaste que les terres mystérieuses d'Aeshan
+          elles-mêmes. Actuellement en phase de conception, ce jeu virtuel - choix dicté par des
+          considérations budgétaires - envisage d'intégrer un système de rareté pour ses cartes,
+          ajoutant ainsi une dimension de collection excitante à l'expérience de jeu.
+        </p>
+        <p>
+          Cependant, les mécanismes d'obtention des cartes restent à définir, ouvrant la porte à de
+          nombreuses possibilités créatives. Cette idée en gestation représente une nouvelle façon
+          passionnante d'explorer et d'interagir avec le riche univers d'Aeshan, promettant
+          d'ajouter une couche supplémentaire de profondeur et d'engagement à cet univers déjà
+          fascinant. Alors que le concept continue d'évoluer, il incarne l'esprit d'innovation et
+          d'expansion constante qui caractérise l'univers d'Aeshan, invitant les joueurs à découvrir
+          ses merveilles sous une forme nouvelle et interactive.
+        </p>
+      </div>
+      <Separateur3 />
+    </div>
   </div>
 </template>
