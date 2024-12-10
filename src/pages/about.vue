@@ -5,6 +5,7 @@ import Separateur2 from '@/components/icons/separateur2.vue'
 import CardAbout from '@/components/CardAbout.vue'
 import Separateur3 from '@/components/icons/separateur3.vue'
 import Arrow from '@/components/icons/Arrow.vue'
+import MenuAncre from '@/components/MenuAncre.vue'
 import Pocketbase from 'pocketbase'
 import type { RecordModel } from 'pocketbase'
 import { ref, onMounted } from 'vue'
@@ -34,6 +35,11 @@ onMounted(async () => {
 
 <template>
   <div class="h-full w-full bg-[url(/ScrollBackground2.webp)] bg-fixed p-32">
+    <MenuAncre :items="[
+      { id: 'mon-histoire', label: 'Mon histoire' },
+      { id: 'parcours-scolaire', label: 'Parcours scolaire' },
+      { id: 'experiences', label: 'Expériences' }
+    ]" />
     <div class="bg-LightBrown p-2">
       <div
         class="flex flex-col items-center space-y-8 p-28 *:flex *:flex-col *:items-center *:space-y-8"
@@ -41,7 +47,7 @@ onMounted(async () => {
         <section class="flex flex-col items-center">
           <Separateur1 />
           <img src="/Avatar.webp" alt="" class="w-60 rounded-full" />
-          <h1>Mon histoire</h1>
+          <h1 id="mon-histoire">Mon histoire</h1>
           <p>
             Éternel curieux et touche à tout, je me lance parfois des défis farfelus ou dans des
             projets qui me font vibrer. Grand amoureux de la nature, du monde des jeux vidéos et de
@@ -50,7 +56,7 @@ onMounted(async () => {
         </section>
         <Separateur2 />
         <section class="">
-          <h2>Parcours scolaire</h2>
+          <h2 id="parcours-scolaire">Parcours scolaire</h2>
           <div class="flex items-center gap-5">
             <CardAbout
               type="school"
@@ -94,7 +100,7 @@ onMounted(async () => {
         <Separateur3 />
         <section class="*:flex *:flex-col *:items-center *:space-y-8">
           <div>
-            <h2>Expériences professionnelles</h2>
+            <h2 id="experiences">Expériences professionnelles</h2>
             <div class="grid w-full grid-cols-3 gap-2">
               <CardAbout
                 v-for="card in jobCards"
