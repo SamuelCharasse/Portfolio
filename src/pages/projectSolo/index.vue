@@ -10,7 +10,11 @@ import MenuAncre from '@/components/MenuAncre.vue'
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <MenuAncre />
+  <MenuAncre :items="[
+    {id: 'Tales', label: 'Tales of Aeshan'},
+    {id: 'Fiction', label: 'Les Immortels'},
+    {id: 'Cartes', label: 'Les cartes d\'Aeshan'}
+  ]" />
   <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">
     <div id="Tales" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />

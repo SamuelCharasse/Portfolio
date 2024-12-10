@@ -2,11 +2,15 @@
 import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 
-const menuItems = [
-  { id: 'Tales', label: 'Tales of Aeshan' },
-  { id: 'Fiction', label: 'Les Immortels' },
-  { id: 'Cartes', label: 'Les Cartes' }
-]
+interface MenuItem {
+  id: string
+  label: string
+}
+
+// Définition des props
+const props = defineProps<{
+  items: MenuItem[]
+}>()
 
 const activeSection = ref('')
 
@@ -25,17 +29,21 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activeSection.value = entry.target.id
-      }
-    })
-  }, {
-    threshold: 0.5
-  })
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeSection.value = entry.target.id
+        }
+      })
+    },
+    {
+      threshold: 0.5
+    }
+  )
 
-  menuItems.forEach(item => {
+  // Observer les sections basées sur les props
+  props.items.forEach((item) => {
     const section = document.getElementById(item.id)
     if (section) observer.observe(section)
   })
@@ -45,22 +53,22 @@ onMounted(() => {
 <template>
   <nav class="fixed right-8 top-1/3 z-50">
     <ul class="flex flex-col gap-4 rounded-lg border-2 border-Brown bg-LightBrown p-4">
-        <li>
-        <RouterLink 
+      <li>
+        <RouterLink
           to="/"
-          class="block px-4 py-2 rounded transition-all duration-300 text-Brown hover:text-DarkBrown"
+          class="block rounded px-4 py-2 text-Brown transition-all duration-300 hover:text-DarkBrown"
         >
           ← Retour à l'accueil
         </RouterLink>
       </li>
-      <li v-for="item in menuItems" :key="item.id">
-        <a 
+      <li v-for="item in items" :key="item.id">
+        <a
           @click.prevent="scrollToElement(item.id)"
           href="#"
           :class="[
-            'block px-4 py-2 rounded transition-all duration-300 cursor-pointer',
-            activeSection === item.id 
-              ? 'text-LightBrown bg-Brown transform scale-105' 
+            'block rounded px-4 py-2 transition-all duration-300',
+            activeSection === item.id
+              ? 'scale-105 transform bg-Brown text-LightBrown'
               : 'text-Brown hover:text-DarkBrown'
           ]"
         >
@@ -68,9 +76,9 @@ onMounted(() => {
         </a>
       </li>
       <li>
-        <button 
+        <button
           @click="scrollToTop"
-          class="block w-full px-4 py-2 rounded transition-all duration-300 text-Brown hover:text-DarkBrown"
+          class="block w-full rounded px-4 py-2 text-Brown transition-all duration-300 hover:text-DarkBrown"
         >
           ↑ Haut de page
         </button>
