@@ -47,7 +47,7 @@ const toggleSound = () => {
     />
 
     <!-- Menu positionné -->
-    <div class="absolute left-8 top-4 z-10">
+    <div class="absolute left-12 top-4 z-10">
       <Menu @click="toggleMenuOverlay" />
     </div>
     <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay" />
