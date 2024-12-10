@@ -55,7 +55,7 @@ onMounted(async () => {
           </p>
         </section>
         <Separateur2 />
-        <section class="">
+        <section>
           <h2 id="parcours-scolaire">Parcours scolaire</h2>
           <div class="flex items-center gap-5">
             <CardAbout
