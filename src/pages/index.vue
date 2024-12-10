@@ -1,12 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref, onMounted} from 'vue';
-import Menu from '@/components/icons/Menu.vue';
-import Tile from '@/components/Tile.vue';
-import Popup from '@/components/Popup.vue';
-import MenuOverlay from '@/components/MenuOverlay.vue';
+import { ref, onMounted } from 'vue'
+import Menu from '@/components/icons/Menu.vue'
+import Tile from '@/components/Tile.vue'
+import Popup from '@/components/Popup.vue'
+import MenuOverlay from '@/components/MenuOverlay.vue'
+import SoundOn from '@/components/icons/SoundOn.vue'
+import SoundOff from '@/components/icons/SoundOff.vue'
 
-const showPopup = ref(false);
+const showPopup = ref(false)
 
 onMounted(() => {
   if (!localStorage.getItem('hasVisited')) {
@@ -27,6 +29,12 @@ const toggleMenuOverlay = () => {
 
 const closeMenuOverlay = () => {
   showMenuOverlay.value = false
+}
+
+const isSoundOn = ref(true)
+
+const toggleSound = () => {
+  isSoundOn.value = !isSoundOn.value
 }
 </script>
 
@@ -64,7 +72,10 @@ const closeMenuOverlay = () => {
       </Tile>
     </div>
     <RouterView class="relative z-10" />
-
+    <div class="absolute bottom-4 right-12">
+    <SoundOn v-if="isSoundOn" @click="toggleSound" />
+    <SoundOff v-else @click="toggleSound" />
+  </div>
     <!-- Pop-up -->
     <Popup v-if="showPopup" @close="closePopup" />
   </main>
