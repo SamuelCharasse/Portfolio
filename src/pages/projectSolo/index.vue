@@ -5,12 +5,14 @@ import Separateur2 from '@/components/icons/separateur2.vue'
 import Separateur3 from '@/components/icons/separateur3.vue'
 import ImageTemplate from '@/components/ImageTemplate.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
+import MenuAncre from '@/components/MenuAncre.vue'
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
+    <MenuAncre />
   <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">
-    <div class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
+    <div id="Tales" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
       <div>
         <h2>Idralwel - Tales of Aeshan</h2>
@@ -85,7 +87,7 @@ import btnDefault from '@/components/boutons/btnDefault.vue'
       <btnDefault>Aeshan World Anvil</btnDefault>
       <Separateur3 />
     </div>
-    <div class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
+    <div id="Fiction" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
       <h2>Les Immortels</h2>
       <div class="flex gap-8 px-[124px]">
@@ -163,7 +165,7 @@ import btnDefault from '@/components/boutons/btnDefault.vue'
       <btnDefault>Liens pour écouter la fiction sonore</btnDefault>
       <Separateur3 />
     </div>
-    <div class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
+    <div id="Cartes" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
       <h2>Les cartes d'Aeshan</h2>
       <div class="flex gap-8 px-[124px]">
