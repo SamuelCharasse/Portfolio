@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex h-16 w-16 flex-col items-center justify-center gap-2.5 overflow-hidden rounded-lg border-4 border-Brown bg-LightBrown p-4"
+    class="relative flex h-16 w-16 flex-col items-center justify-center gap-2.5 overflow-hidden rounded-lg border-4 border-Brown bg-LightBrown p-4 cursor-pointer"
     style="box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25)"
   >
     <svg

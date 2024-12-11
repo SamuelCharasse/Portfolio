@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
     <g filter="url(#filter0_dd_175_9)">
       <rect x="8" y="4" width="48" height="48" rx="8" fill="#DDC99C" shape-rendering="crispEdges" />
       <rect
