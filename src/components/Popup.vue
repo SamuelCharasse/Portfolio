@@ -16,7 +16,6 @@
 
 <script setup>
 import btnDefault from './boutons/btnDefault.vue';
-import { defineEmits } from 'vue'
 
 const emit = defineEmits(['close'])
 
