@@ -63,7 +63,7 @@ onMounted(() => {
     <div class="absolute left-12 top-4 z-10">
       <Menu @click="toggleMenuOverlay" />
     </div>
-    <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay" />
+    <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay" class="fixed left-0 top-20" />
     <div class="absolute" style="top: 350px; left: 700px;">
       <Tile>
         <RouterLink to="/projectSolo">Projets Perso</RouterLink>
