@@ -1,48 +1,39 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { RouterLink } from 'vue-router'
-import Menu from '@/components/icons/Menu.vue'
-import Tile from '@/components/Tile.vue'
-import Popup from '@/components/Popup.vue'
-import MenuOverlay from '@/components/MenuOverlay.vue'
-import SoundOn from '@/components/icons/SoundOn.vue'
-import SoundOff from '@/components/icons/SoundOff.vue'
-import SoundBar from '@/components/SoundBar.vue'    
-//Gestion du popup à la première connexion
-const showPopup = ref(false)
+import { ref, onMounted } from 'vue';
+import { RouterLink } from 'vue-router';
+import Menu from '@/components/icons/Menu.vue';
+import Tile from '@/components/Tile.vue';
+import Popup from '@/components/Popup.vue';
+import MenuOverlay from '@/components/MenuOverlay.vue';
+import SoundBar from '@/components/SoundBar.vue';
+
+// Gestion du popup à la première connexion
+const showPopup = ref(false);
 
 onMounted(() => {
   if (!localStorage.getItem('hasVisited')) {
-    showPopup.value = true
-    localStorage.setItem('hasVisited', 'true')
+    showPopup.value = true;
+    localStorage.setItem('hasVisited', 'true');
   }
-})
+});
 
 const closePopup = () => {
-  showPopup.value = false
-}
+  showPopup.value = false;
+};
+
 // Gestion du menu
-const showMenuOverlay = ref(false)
+const showMenuOverlay = ref(false);
 
 const toggleMenuOverlay = () => {
-  showMenuOverlay.value = !showMenuOverlay.value
-}
+  showMenuOverlay.value = !showMenuOverlay.value;
+};
 
 const closeMenuOverlay = () => {
-  showMenuOverlay.value = false
-}
-// Gestion de l'icone SoundOn/Off
-const isSoundOn = ref(true);
-const showSoundBar = ref(false);
-
-const toggleSound = () => {
-  isSoundOn.value = !isSoundOn.value;
-  showSoundBar.value = isSoundOn.value;
+  showMenuOverlay.value = false;
 };
 
 // Gestion de la position des Tiles avec Canvas
-
 onMounted(() => {
   const canvas = document.getElementById('backgroundCanvas') as HTMLCanvasElement;
   if (canvas) {
@@ -67,6 +58,8 @@ onMounted(() => {
       <Menu @click="toggleMenuOverlay" />
     </div>
     <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay" class="fixed left-0 top-20" />
+
+    <!-- Placer les éléments "Tile" en utilisant des unités relatives -->
     <div class="absolute" style="top: 350px; left: 700px;">
       <Tile>
         <RouterLink to="/projectSolo">Projets Perso</RouterLink>
@@ -89,9 +82,7 @@ onMounted(() => {
     </div>
     <RouterView class="relative z-10" />
     <div class="absolute bottom-4 right-12">
-      <SoundOn v-if="isSoundOn" @click="toggleSound" />
-      <SoundOff v-else @click="toggleSound" />
-      <SoundBar v-if="showSoundBar" />
+      <SoundBar />
     </div>
     <!-- Pop-up -->
     <Popup v-if="showPopup" @close="closePopup" />
