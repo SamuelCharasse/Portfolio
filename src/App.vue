@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
+import SoundBar from './components/soundBar.vue';
 </script>
 <template>
   <head>
@@ -11,5 +12,8 @@ import { RouterView } from 'vue-router';
     <Suspense>
       <RouterView :key="$route.path"/>
     </Suspense>
+    <div class="fixed bottom-4 right-12">
+      <SoundBar />
+    </div>
   </main>
 </template>

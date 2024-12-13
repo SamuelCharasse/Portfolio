@@ -6,8 +6,6 @@ import Menu from '@/components/icons/Menu.vue';
 import Tile from '@/components/Tile.vue';
 import Popup from '@/components/Popup.vue';
 import MenuOverlay from '@/components/MenuOverlay.vue';
-import SoundBar from '@/components/SoundBar.vue';
-
 // Gestion du popup à la première connexion
 const showPopup = ref(false);
 
@@ -81,9 +79,6 @@ onMounted(() => {
       </Tile>
     </div>
     <RouterView class="relative z-10" />
-    <div class="absolute bottom-4 right-12">
-      <SoundBar />
-    </div>
     <!-- Pop-up -->
     <Popup v-if="showPopup" @close="closePopup" />
   </main>
