@@ -81,7 +81,7 @@ onMounted(() => {
     </div>
     <div class="absolute" style="top: 30px; left: 730px;">
       <Tile>
-        <RouterLink to="/">Contact</RouterLink>
+        <a href="mailto:voxorproduction@gmail.com">Contact</a>
       </Tile>
     </div>
     <RouterView class="relative z-10" />
