@@ -8,6 +8,7 @@ import Popup from '@/components/Popup.vue'
 import MenuOverlay from '@/components/MenuOverlay.vue'
 import SoundOn from '@/components/icons/SoundOn.vue'
 import SoundOff from '@/components/icons/SoundOff.vue'
+import SoundBar from '@/components/SoundBar.vue'    
 //Gestion du popup à la première connexion
 const showPopup = ref(false)
 
@@ -32,11 +33,13 @@ const closeMenuOverlay = () => {
   showMenuOverlay.value = false
 }
 // Gestion de l'icone SoundOn/Off
-const isSoundOn = ref(true)
+const isSoundOn = ref(true);
+const showSoundBar = ref(false);
 
 const toggleSound = () => {
-  isSoundOn.value = !isSoundOn.value
-}
+  isSoundOn.value = !isSoundOn.value;
+  showSoundBar.value = isSoundOn.value;
+};
 
 // Gestion de la position des Tiles avec Canvas
 
@@ -86,9 +89,10 @@ onMounted(() => {
     </div>
     <RouterView class="relative z-10" />
     <div class="absolute bottom-4 right-12">
-    <SoundOn v-if="isSoundOn" @click="toggleSound" />
-    <SoundOff v-else @click="toggleSound" />
-  </div>
+      <SoundOn v-if="isSoundOn" @click="toggleSound" />
+      <SoundOff v-else @click="toggleSound" />
+      <SoundBar v-if="showSoundBar" />
+    </div>
     <!-- Pop-up -->
     <Popup v-if="showPopup" @close="closePopup" />
   </main>
