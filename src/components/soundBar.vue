@@ -1,8 +1,9 @@
 <template>
   <div class="flex flex-col gap-2 rounded-lg bg-LightBrown p-4 shadow-md border-Brown border-2">
-    <div class="flex justify-between items-center">
-      <button @click="playRandomSound">Play</button>
-      <button @click="pauseSound">Pause</button>
+    <div class="flex gap-2 justify-between items-center">
+      <button @click="playSound">Lire</button>
+      <button @click="pauseSound">Stop</button>
+      <button @click="playNextSound">Suivant</button>
     </div>
     <div class="flex flex-col">
       <label for="volume">Volume: {{ volume }}</label>
@@ -29,22 +30,40 @@ const props = defineProps<{
 }>()
 
 let currentSound: Howl | null = null
+let currentIndex = ref(0)
 
 // Volume réactif
 const volume = ref(0.1)
 
-// Méthode pour lire un son aléatoire
-const playRandomSound = () => {
+// Méthode pour lire le son en cours ou le premier son
+const playSound = () => {
+  if (currentSound && currentSound.playing()) {
+    return
+  }
+  playCurrentSound()
+}
+
+// Méthode pour lire le son actuel
+const playCurrentSound = () => {
   if (currentSound && currentSound.playing()) {
     currentSound.stop()
   }
-  const randomIndex = Math.floor(Math.random() * props.playlist.length)
   currentSound = new Howl({
-    src: [props.playlist[randomIndex]],
+    src: [props.playlist[currentIndex.value]],
     volume: volume.value,
-    loop: false
+    loop: false,
+    onend: () => {
+      currentIndex.value = (currentIndex.value + 1) % props.playlist.length
+      playCurrentSound()
+    }
   })
   currentSound.play()
+}
+
+// Méthode pour lire le son suivant
+const playNextSound = () => {
+  currentIndex.value = (currentIndex.value + 1) % props.playlist.length
+  playCurrentSound()
 }
 
 // Méthode pour mettre en pause le son
@@ -67,5 +86,6 @@ watch(() => props.playlist, () => {
   if (currentSound && currentSound.playing()) {
     currentSound.stop()
   }
+  currentIndex.value = 0
 })
 </script>
