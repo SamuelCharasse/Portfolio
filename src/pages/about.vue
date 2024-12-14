@@ -137,7 +137,7 @@ const playlistIndex = [
         <section>
           <h2 id="competences">Compétences</h2>
           <h3>Outils</h3>
-          <div class="grid w-full grid-cols-3 gap-2">
+          <div class="grid w-full grid-cols-5 gap-2">
             <SkillAbout
                 v-for="card in skillsTool"
                 :key="card.id"
@@ -148,7 +148,7 @@ const playlistIndex = [
 
           </div>
           <h3>Langages</h3>
-          <div class="grid w-full grid-cols-3 gap-2">
+          <div class="grid w-full grid-cols-5 gap-2">
             <SkillAbout
                 v-for="card in skillsLanguage"
                 :key="card.id"
