@@ -14,7 +14,7 @@
     "typegen": "pocketbase-typegen --db ./pocketbase/pb_data/data.db --out ./src/pocketbase-types.ts"
   },
   "dependencies": {
-    "@unhead/vue": "^1.11.8",
+    "@unhead/vue": "^1.11.14",
     "@vueup/vue-quill": "^1.2.0",
     "howler": "^2.2.4",
     "pocketbase": "^0.21.5",
