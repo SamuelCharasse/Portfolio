@@ -45,9 +45,10 @@ onMounted(async () => {
 
 //Playlist de la page
 const playlistIndex = [
-  '/sounds/Sound1.mp3',
-  '/sounds/Sound2.mp3',
-  '/sounds/Sound3.mp3'
+  '/sounds/SoundIndex.mp3',
+  '/sounds/SoundIndex2.mp3',
+  '/sounds/SoundIndex3.mp3',
+  '/sounds/SoundIndex4.mp3'
 ]
 </script>
 
