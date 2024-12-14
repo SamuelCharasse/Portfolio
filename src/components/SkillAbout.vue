@@ -3,14 +3,16 @@ const props = withDefaults(
   defineProps<{
     type: 'tool' | 'language'
     name: string
-    img: string
+    data?: any
   }>(),
   {
     type: 'tool',
-    name: 'Nom',
-    img: 'Image'
+    name: 'Nom'
   }
 )
+import { pb } from '@/backend';
+const img = pb.getFileUrl(props.data, props.data.img)
+
 </script>
 
 <template>

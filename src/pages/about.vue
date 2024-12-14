@@ -143,7 +143,7 @@ const playlistIndex = [
                 :key="card.id"
                 :type="card.type"
                 :name="card.name"
-                :img="card.img"
+                :data="card"
               />
 
           </div>
@@ -154,7 +154,7 @@ const playlistIndex = [
                 :key="card.id"
                 :type="card.type"
                 :name="card.name"
-                :img="card.img"
+                :data="card"
               />
 
           </div>
