@@ -6,7 +6,7 @@ import separateur3 from '@/components/icons/separateur3.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
 import { useSeoMeta } from '@unhead/vue'
-import soundBar from '@/components/soundBar.vue'
+import SoundBar from '@/components/soundBar.vue'
 
 // Gestion du SEO
 useSeoMeta({
