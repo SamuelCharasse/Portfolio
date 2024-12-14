@@ -16,6 +16,12 @@ useSeoMeta({
   ogTitle: 'Réalisations',
   ogImage: 'https://scharasse.fr/Avatar.webp'
 })
+//Playlist de la page
+const playlistIndex = [
+  '/sounds/Sound1.mp3',
+  '/sounds/Sound2.mp3',
+  '/sounds/Sound3.mp3'
+]
 </script>
 <template>
   <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">
@@ -67,7 +73,7 @@ useSeoMeta({
       <h2>À suivre...</h2>
     </div>
     <div class="fixed bottom-4 right-12">
-      <SoundBar />
+      <SoundBar :playlist="playlistIndex" />
     </div>
   </div>
 </template>

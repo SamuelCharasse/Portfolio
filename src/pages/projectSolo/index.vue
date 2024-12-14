@@ -17,6 +17,13 @@ useSeoMeta({
   ogTitle: 'Projets Personnels',
   ogImage: 'https://scharasse.fr/Avatar.webp'
 })
+
+//Playlist de la page
+const playlistIndex = [
+  '/sounds/Sound1.mp3',
+  '/sounds/Sound2.mp3',
+  '/sounds/Sound3.mp3'
+]
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
@@ -222,6 +229,6 @@ useSeoMeta({
     </div>
   </div>
   <div class="fixed bottom-4 right-12">
-    <SoundBar />
+    <SoundBar :playlist="playlistIndex" />
   </div>
 </template>

@@ -42,6 +42,13 @@ onMounted(async () => {
     console.error('Error fetching records:', error)
   }
 })
+
+//Playlist de la page
+const playlistIndex = [
+  '/sounds/Sound1.mp3',
+  '/sounds/Sound2.mp3',
+  '/sounds/Sound3.mp3'
+]
 </script>
 
 <template>
@@ -167,6 +174,6 @@ onMounted(async () => {
     </div>
   </div>
   <div class="fixed bottom-4 right-12">
-    <SoundBar />
+    <SoundBar :playlist="playlistIndex" />
   </div>
 </template>
