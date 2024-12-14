@@ -6,7 +6,8 @@ import Separateur3 from '@/components/icons/separateur3.vue'
 import ImageTemplate from '@/components/ImageTemplate.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
-import { useSeoMeta } from '@unhead/vue';
+import { useSeoMeta } from '@unhead/vue'
+import SoundBar from '@/components/soundBar.vue'
 
 // Gestion du SEO
 useSeoMeta({
@@ -14,17 +15,19 @@ useSeoMeta({
   description: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
   ogDescription: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
   ogTitle: 'Projets Personnels',
-  ogImage: 'https://scharasse.fr/Avatar.webp',
+  ogImage: 'https://scharasse.fr/Avatar.webp'
 })
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <MenuAncre :items="[
-    {id: 'Tales', label: 'Tales of Aeshan'},
-    {id: 'Fiction', label: 'Les Immortels'},
-    {id: 'Cartes', label: 'Les cartes d\'Aeshan'}
-  ]" />
+  <MenuAncre
+    :items="[
+      { id: 'Tales', label: 'Tales of Aeshan' },
+      { id: 'Fiction', label: 'Les Immortels' },
+      { id: 'Cartes', label: 'Les cartes d\'Aeshan' }
+    ]"
+  />
   <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">
     <div id="Tales" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
@@ -217,5 +220,8 @@ useSeoMeta({
       </div>
       <Separateur3 />
     </div>
+  </div>
+  <div class="fixed bottom-4 right-12">
+    <SoundBar />
   </div>
 </template>

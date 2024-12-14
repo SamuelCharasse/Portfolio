@@ -9,7 +9,8 @@ import MenuAncre from '@/components/MenuAncre.vue'
 import Pocketbase from 'pocketbase'
 import type { RecordModel } from 'pocketbase'
 import { ref, onMounted } from 'vue'
-import { useSeoMeta } from '@unhead/vue';
+import { useSeoMeta } from '@unhead/vue'
+import SoundBar from '@/components/soundBar.vue'
 
 // Gestion du SEO
 useSeoMeta({
@@ -17,39 +18,41 @@ useSeoMeta({
   description: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
   ogDescription: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
   ogTitle: 'À propos',
-  ogImage: 'https://scharasse.fr/Avatar.webp',
+  ogImage: 'https://scharasse.fr/Avatar.webp'
 })
 
 const pb = new Pocketbase('https://portfolio-samuecharasse.pockethost.io/')
-const CardData = ref<RecordModel[]>([]);
-const jobCards = ref<RecordModel[]>([]);
+const CardData = ref<RecordModel[]>([])
+const jobCards = ref<RecordModel[]>([])
 
 onMounted(async () => {
   try {
     // Récupération des cards de type "job"
     const jobRecords = await pb.collection('CARDABOUT').getFullList({
       filter: 'type = "job"'
-    });
-    jobCards.value = jobRecords;
+    })
+    jobCards.value = jobRecords
 
     // Récupération des cards de type "other"
     const otherRecords = await pb.collection('CARDABOUT').getFullList({
       filter: 'type = "other"'
-    });
-    CardData.value = otherRecords;
+    })
+    CardData.value = otherRecords
   } catch (error) {
-    console.error('Error fetching records:', error);
+    console.error('Error fetching records:', error)
   }
-});
+})
 </script>
 
 <template>
   <div class="h-full w-full bg-[url(/ScrollBackground2.webp)] bg-fixed p-32">
-    <MenuAncre :items="[
-      { id: 'mon-histoire', label: 'Mon histoire' },
-      { id: 'parcours-scolaire', label: 'Parcours scolaire' },
-      { id: 'experiences', label: 'Expériences' }
-    ]" />
+    <MenuAncre
+      :items="[
+        { id: 'mon-histoire', label: 'Mon histoire' },
+        { id: 'parcours-scolaire', label: 'Parcours scolaire' },
+        { id: 'experiences', label: 'Expériences' }
+      ]"
+    />
     <div class="bg-LightBrown p-2">
       <div
         class="flex flex-col items-center space-y-8 p-28 *:flex *:flex-col *:items-center *:space-y-8"
@@ -162,5 +165,8 @@ onMounted(async () => {
         </section>
       </div>
     </div>
+  </div>
+  <div class="fixed bottom-4 right-12">
+    <SoundBar />
   </div>
 </template>
