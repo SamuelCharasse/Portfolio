@@ -7,7 +7,7 @@ import Tile from '@/components/Tile.vue'
 import Popup from '@/components/Popup.vue'
 import MenuOverlay from '@/components/MenuOverlay.vue'
 import { useSeoMeta } from '@unhead/vue'
-import SoundBar from '@/components/SoundBar.vue'
+import SoundBar from '@/components/soundBar.vue'
 // Gestion du SEO
 useSeoMeta({
   title: 'Accueil',
