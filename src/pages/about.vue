@@ -3,6 +3,7 @@
 import Separateur1 from '@/components/icons/separateur1.vue'
 import Separateur2 from '@/components/icons/separateur2.vue'
 import CardAbout from '@/components/CardAbout.vue'
+import SkillAbout from '@/components/SkillAbout.vue'
 import Separateur3 from '@/components/icons/separateur3.vue'
 import Arrow from '@/components/icons/Arrow.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
@@ -24,6 +25,8 @@ useSeoMeta({
 const pb = new Pocketbase('https://portfolio-samuecharasse.pockethost.io/')
 const CardData = ref<RecordModel[]>([])
 const jobCards = ref<RecordModel[]>([])
+const skillsTool = ref<RecordModel[]>([])
+const skillsLanguage = ref<RecordModel[]>([])
 
 onMounted(async () => {
   try {
@@ -38,6 +41,17 @@ onMounted(async () => {
       filter: 'type = "other"'
     })
     CardData.value = otherRecords
+
+    // Récupération des compétences
+    const toolRecords = await pb.collection('SKILLS').getFullList({
+      filter: 'type = "tool"'
+    })
+    skillsTool.value = toolRecords
+    // Ré"cupération des langages
+    const languageRecords = await pb.collection('SKILLS').getFullList({
+      filter: 'type = "language"'
+    })
+    skillsLanguage.value = languageRecords
   } catch (error) {
     console.error('Error fetching records:', error)
   }
@@ -58,6 +72,7 @@ const playlistIndex = [
       :items="[
         { id: 'mon-histoire', label: 'Mon histoire' },
         { id: 'parcours-scolaire', label: 'Parcours scolaire' },
+        { id: 'competences', label: 'Compétences' },
         { id: 'experiences', label: 'Expériences' }
       ]"
     />
@@ -117,6 +132,32 @@ const playlistIndex = [
             MMI à Montbéliard, prêt à explorer de nouveaux territoires de connaissances et de
             compétences.
           </p>
+        </section>
+        <Separateur3 />
+        <section>
+          <h2 id="competences">Compétences</h2>
+          <h3>Outils</h3>
+          <div class="grid w-full grid-cols-3 gap-2">
+            <SkillAbout
+                v-for="card in skillsTool"
+                :key="card.id"
+                :type="card.type"
+                :name="card.name"
+                :img="card.img"
+              />
+
+          </div>
+          <h3>Langages</h3>
+          <div class="grid w-full grid-cols-3 gap-2">
+            <SkillAbout
+                v-for="card in skillsLanguage"
+                :key="card.id"
+                :type="card.type"
+                :name="card.name"
+                :img="card.img"
+              />
+
+          </div>
         </section>
         <Separateur3 />
         <section class="*:flex *:flex-col *:items-center *:space-y-8">
