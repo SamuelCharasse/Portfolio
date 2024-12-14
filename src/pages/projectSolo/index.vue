@@ -6,6 +6,16 @@ import Separateur3 from '@/components/icons/separateur3.vue'
 import ImageTemplate from '@/components/ImageTemplate.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
+import { useSeoMeta } from '@unhead/vue';
+
+// Gestion du SEO
+useSeoMeta({
+  title: 'Projets Personnels',
+  description: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogDescription: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogTitle: 'Projets Personnels',
+  ogImage: 'https://scharasse.fr/Avatar.webp',
+})
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->

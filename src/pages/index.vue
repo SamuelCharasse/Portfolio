@@ -6,6 +6,16 @@ import Menu from '@/components/icons/Menu.vue';
 import Tile from '@/components/Tile.vue';
 import Popup from '@/components/Popup.vue';
 import MenuOverlay from '@/components/MenuOverlay.vue';
+import { useSeoMeta } from '@unhead/vue';
+
+// Gestion du SEO
+useSeoMeta({
+  title: 'Accueil',
+  description: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogDescription: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogTitle: 'Accueil',
+  ogImage: 'https://scharasse.fr/PortfolioSamV2.webp',
+})
 // Gestion du popup à la première connexion
 const showPopup = ref(false);
 

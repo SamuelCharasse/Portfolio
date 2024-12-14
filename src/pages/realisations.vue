@@ -5,6 +5,16 @@ import Separateur2 from '@/components/icons/separateur2.vue'
 import separateur3 from '@/components/icons/separateur3.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
+import { useSeoMeta } from '@unhead/vue';
+
+// Gestion du SEO
+useSeoMeta({
+  title: 'Réalisations',
+  description: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogDescription: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogTitle: 'Réalisations',
+  ogImage: 'https://scharasse.fr/Avatar.webp',
+})
 </script>
 <template>
   <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">

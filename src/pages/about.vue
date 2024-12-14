@@ -9,6 +9,16 @@ import MenuAncre from '@/components/MenuAncre.vue'
 import Pocketbase from 'pocketbase'
 import type { RecordModel } from 'pocketbase'
 import { ref, onMounted } from 'vue'
+import { useSeoMeta } from '@unhead/vue';
+
+// Gestion du SEO
+useSeoMeta({
+  title: 'À propos',
+  description: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogDescription: 'Portofolio de Samuel Charasse, Narrative Designer et Développeur Web',
+  ogTitle: 'À propos',
+  ogImage: 'https://scharasse.fr/Avatar.webp',
+})
 
 const pb = new Pocketbase('https://portfolio-samuecharasse.pockethost.io/')
 const CardData = ref<RecordModel[]>([]);
