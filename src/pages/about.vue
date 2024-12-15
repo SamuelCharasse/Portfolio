@@ -11,7 +11,6 @@ import Pocketbase from 'pocketbase'
 import type { RecordModel } from 'pocketbase'
 import { ref, onMounted } from 'vue'
 import { useSeoMeta } from '@unhead/vue'
-import SoundBar from '@/components/soundBar.vue'
 
 // Gestion du SEO
 useSeoMeta({
@@ -56,7 +55,6 @@ onMounted(async () => {
     console.error('Error fetching records:', error)
   }
 })
-
 //Playlist de la page
 const playlistIndex = [
   '/sounds/SoundIndex.mp3',
@@ -64,6 +62,13 @@ const playlistIndex = [
   '/sounds/SoundIndex3.mp3',
   '/sounds/SoundIndex4.mp3'
 ]
+onMounted(() => {
+  const btn = document.getElementById('set') as HTMLButtonElement
+  if (btn) {
+    btn.click();
+    btn.remove();
+  }
+})
 </script>
 
 <template>
@@ -215,7 +220,5 @@ const playlistIndex = [
       </div>
     </div>
   </div>
-  <div class="fixed bottom-4 right-12">
-    <SoundBar :playlist="playlistIndex" />
-  </div>
+  <button id="set" @click="$emit('custom-event', playlistIndex)">Bouton test</button>
 </template>

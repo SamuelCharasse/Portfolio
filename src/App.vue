@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { ref } from 'vue'
+import SoundBar from '@/components/soundBar.vue'
+
+const activeMusic = ref<string[]>([])
+
+const handleCustomEvent = (value: any) => {
+  console.log('Event received:', value)
+  activeMusic.value = value
+}
 </script>
 <template>
   <head>
@@ -11,8 +20,13 @@ import { RouterView } from 'vue-router'
     />
   </head>
   <main>
-    <Suspense>
-      <RouterView :key="$route.path" />
-    </Suspense>
+    <RouterView v-slot="{ Component }">
+      <Suspense>
+        <component :is="Component" @custom-event="(value: string[]) => handleCustomEvent(value)" />
+      </Suspense>
+    </RouterView>
+    <div class="fixed z-50 bottom-4 right-4">
+      <SoundBar :playlist="activeMusic" />
+    </div>
   </main>
 </template>

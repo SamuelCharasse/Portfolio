@@ -7,7 +7,7 @@ import ImageTemplate from '@/components/ImageTemplate.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
 import { useSeoMeta } from '@unhead/vue'
-import SoundBar from '@/components/soundBar.vue'
+import { onMounted } from 'vue'
 
 // Gestion du SEO
 useSeoMeta({
@@ -25,6 +25,13 @@ const playlistIndex = [
   '/sounds/SoundIndex3.mp3',
   '/sounds/SoundIndex4.mp3'
 ]
+onMounted(() => {
+  const btn = document.getElementById('set') as HTMLButtonElement
+  if (btn) {
+    btn.click();
+    btn.remove();
+  }
+})
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
@@ -229,7 +236,5 @@ const playlistIndex = [
       <Separateur3 />
     </div>
   </div>
-  <div class="fixed bottom-4 right-12">
-    <SoundBar :playlist="playlistIndex" />
-  </div>
+  <button id="set" @click="$emit('custom-event', playlistIndex)">Bouton test</button>
 </template>

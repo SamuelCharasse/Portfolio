@@ -7,7 +7,6 @@ import Tile from '@/components/Tile.vue'
 import Popup from '@/components/Popup.vue'
 import MenuOverlay from '@/components/MenuOverlay.vue'
 import { useSeoMeta } from '@unhead/vue'
-import SoundBar from '@/components/soundBar.vue'
 import { useStorage } from '@vueuse/core'
 // Gestion du SEO
 useSeoMeta({
@@ -17,9 +16,16 @@ useSeoMeta({
   ogTitle: 'Accueil',
   ogImage: 'https://scharasse.fr/PortfolioSamV2.webp'
 })
+
+//Playlist de la page
+const playlistIndex = [
+  '/sounds/SoundIndex.mp3',
+  '/sounds/SoundIndex2.mp3',
+  '/sounds/SoundIndex3.mp3',
+  '/sounds/SoundIndex4.mp3'
+]
 // Gestion du popup à la première connexion
 const hasVisited = useStorage('hasVisited', false)
-
 
 // Gestion du menu
 const showMenuOverlay = ref(false)
@@ -45,17 +51,14 @@ onMounted(() => {
       }
     }
   }
+
+
+  const btn = document.getElementById('set') as HTMLButtonElement
+  if (btn) {
+    btn.click();
+    btn.remove();
+  }
 })
-
-
-
-//Playlist de la page
-const playlistIndex = [
-  '/sounds/SoundIndex.mp3',
-  '/sounds/SoundIndex2.mp3',
-  '/sounds/SoundIndex3.mp3',
-  '/sounds/SoundIndex4.mp3'
-]
 </script>
 
 <template>
@@ -98,8 +101,6 @@ const playlistIndex = [
     <!-- Pop-up -->
     <Popup v-if="!hasVisited" @close="hasVisited = true" />
 
-    <div class="fixed bottom-4 right-12">
-      <SoundBar :playlist="playlistIndex" />
-    </div>
+    <button id="set" @click="$emit('custom-event', playlistIndex)">Bouton test</button>
   </main>
 </template>

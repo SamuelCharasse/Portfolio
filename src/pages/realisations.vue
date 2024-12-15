@@ -6,7 +6,7 @@ import separateur3 from '@/components/icons/separateur3.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
 import { useSeoMeta } from '@unhead/vue'
-import SoundBar from '@/components/soundBar.vue'
+import { onMounted } from 'vue'
 
 // Gestion du SEO
 useSeoMeta({
@@ -23,6 +23,13 @@ const playlistIndex = [
   '/sounds/SoundIndex3.mp3',
   '/sounds/SoundIndex4.mp3'
 ]
+onMounted(() => {
+  const btn = document.getElementById('set') as HTMLButtonElement
+  if (btn) {
+    btn.click();
+    btn.remove();
+  }
+})
 </script>
 <template>
   <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">
@@ -73,8 +80,6 @@ const playlistIndex = [
       <separateur3 />
       <h2>À suivre...</h2>
     </div>
-    <div class="fixed bottom-4 right-12">
-      <SoundBar :playlist="playlistIndex" />
-    </div>
   </div>
+  <button id="set" @click="$emit('custom-event', playlistIndex)">Bouton test</button>
 </template>
