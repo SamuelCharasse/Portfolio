@@ -8,6 +8,7 @@ import Popup from '@/components/Popup.vue'
 import MenuOverlay from '@/components/MenuOverlay.vue'
 import { useSeoMeta } from '@unhead/vue'
 import SoundBar from '@/components/soundBar.vue'
+import { useStorage } from '@vueuse/core'
 // Gestion du SEO
 useSeoMeta({
   title: 'Accueil',
@@ -17,18 +18,8 @@ useSeoMeta({
   ogImage: 'https://scharasse.fr/PortfolioSamV2.webp'
 })
 // Gestion du popup à la première connexion
-const showPopup = ref(false)
+const hasVisited = useStorage('hasVisited', false)
 
-onMounted(() => {
-  if (!localStorage.getItem('hasVisited')) {
-    showPopup.value = true
-    localStorage.setItem('hasVisited', 'true')
-  }
-})
-
-const closePopup = () => {
-  showPopup.value = false
-}
 
 // Gestion du menu
 const showMenuOverlay = ref(false)
@@ -55,6 +46,8 @@ onMounted(() => {
     }
   }
 })
+
+
 
 //Playlist de la page
 const playlistIndex = [
@@ -103,7 +96,7 @@ const playlistIndex = [
     </div>
     <RouterView class="relative z-10" />
     <!-- Pop-up -->
-    <Popup v-if="showPopup" @close="closePopup" />
+    <Popup v-if="!hasVisited" @close="hasVisited = true" />
 
     <div class="fixed bottom-4 right-12">
       <SoundBar :playlist="playlistIndex" />

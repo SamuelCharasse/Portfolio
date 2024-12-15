@@ -23,6 +23,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { Howl, Howler } from 'howler'
+import { useStorage } from '@vueuse/core';
 
 // Définir les props
 const props = defineProps<{
@@ -33,7 +34,7 @@ let currentSound: Howl | null = null
 let currentIndex = ref(0)
 
 // Volume réactif
-const volume = ref(0.1)
+const volume = useStorage('volume', 0.1)
 
 // Méthode pour lire le son en cours ou le premier son
 const playSound = () => {
