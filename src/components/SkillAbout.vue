@@ -17,9 +17,9 @@ const img = pb.getFileUrl(props.data, props.data.img)
 
 <template>
   <div
-    class="flex flex-col space-y-4 rounded-lg border-2 border-DarkBrown bg-White p-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] md:flex-row md:space-y-0 md:space-x-4"
+    class="flex flex-col space-y-4 rounded-lg border-2 border-DarkBrown bg-White p-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] gap-2 md:flex-col md:space-y-0 md:space-x-4"
   >
-    <h4 class="self-center md:self-start">{{ name }}</h4>
-    <img :src="img" :alt="name" class="self-center w-16 h-16 object-contain md:w-24 md:h-24" />
+    <h4 class="self-center">{{ name }}</h4>
+    <img :src="img" :alt="name" class="self-center w-16 h-16 object-contain" />
   </div>
 </template>
