@@ -184,7 +184,7 @@ const closeMenuOverlay = () => {
         <section class="*:flex *:flex-col *:items-center *:space-y-8">
           <div>
             <h2 id="experiences">Expériences professionnelles</h2>
-            <div class="grid w-full grid-cols-3 gap-2">
+            <div class="grid w-full grid-cols-1 gap-2 md:grid-cols-3">
               <CardAbout
                 v-for="card in jobCards"
                 :key="card.id"
@@ -221,7 +221,7 @@ const closeMenuOverlay = () => {
           <Separateur3 />
           <div class="w-full">
             <h2>Expériences diverses</h2>
-            <div class="grid w-full grid-cols-3 gap-2">
+            <div class="grid w-full grid-cols-1 gap-2 md:grid-cols-3">
               <CardAbout
                 v-for="card in CardData"
                 :key="card.id"
