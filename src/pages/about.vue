@@ -2,15 +2,17 @@
 <script setup lang="ts">
 import Separateur1 from '@/components/icons/separateur1.vue'
 import Separateur2 from '@/components/icons/separateur2.vue'
+import Separateur3 from '@/components/icons/separateur3.vue'
 import CardAbout from '@/components/CardAbout.vue'
 import SkillAbout from '@/components/SkillAbout.vue'
-import Separateur3 from '@/components/icons/separateur3.vue'
 import Arrow from '@/components/icons/Arrow.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
 import Pocketbase from 'pocketbase'
 import type { RecordModel } from 'pocketbase'
 import { ref, onMounted } from 'vue'
 import { useSeoMeta } from '@unhead/vue'
+import Menu from '@/components/icons/Menu.vue'
+import MenuOverlay from '@/components/MenuOverlay.vue'
 
 // Gestion du SEO
 useSeoMeta({
@@ -65,14 +67,29 @@ const playlistIndex = [
 onMounted(() => {
   const btn = document.getElementById('set') as HTMLButtonElement
   if (btn) {
-    btn.click();
-    btn.remove();
+    btn.click()
+    btn.remove()
   }
 })
+
+// Gestion du menu
+const showMenuOverlay = ref(false)
+
+const toggleMenuOverlay = () => {
+  showMenuOverlay.value = !showMenuOverlay.value
+}
+
+const closeMenuOverlay = () => {
+  showMenuOverlay.value = false
+}
 </script>
 
 <template>
-  <div class="h-full w-full bg-[url(/ScrollBackground2.webp)] bg-fixed p-32">
+  <div class="fixed left-12 top-4 z-10 md:hidden">
+    <Menu @click="toggleMenuOverlay" />
+  </div>
+  <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay" class="fixed left-0 top-20" />
+  <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-4 md:p-32">
     <MenuAncre
       :items="[
         { id: 'mon-histoire', label: 'Mon histoire' },
@@ -80,8 +97,9 @@ onMounted(() => {
         { id: 'competences', label: 'Compétences' },
         { id: 'experiences', label: 'Expériences' }
       ]"
+      class="hidden md:block"
     />
-    <div class="bg-LightBrown p-2">
+    <div class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <div
         class="flex flex-col items-center space-y-8 p-28 *:flex *:flex-col *:items-center *:space-y-8"
       >
@@ -98,32 +116,32 @@ onMounted(() => {
         <Separateur2 />
         <section>
           <h2 id="parcours-scolaire">Parcours scolaire</h2>
-          <div class="flex items-center gap-5">
+          <div class="flex flex-col gap-5 md:flex-row md:items-center">
             <CardAbout
               type="school"
               title="BUT MMI"
               location="Métiers du Multimédia et d’Internet"
               period="2023-2026"
-              class="w-1/2"
+              class="w-full md:w-1/2"
             />
-            <Arrow direction="top" />
+            <Arrow direction="top" class="hidden md:block" />
             <CardAbout
               type="school"
               title="Formation ARP"
               location="Animateur Radio Polyvalent à SudFormadia"
               period="2018"
-              class="w-1/2"
+              class="w-full md:w-1/2"
             />
-            <Arrow direction="bottom" />
+            <Arrow direction="bottom" class="hidden md:block" />
             <CardAbout
               type="school"
               title="BAC STAV"
               location="Sciences et Technologies de l’Agronomie et du Vivant"
               period="2016"
-              class="w-1/2"
+              class="w-full md:w-1/2"
             />
           </div>
-          <p>
+          <p class="mt-4 text-justify md:text-left">
             Mon épopée scolaire débute avec un BAC STAV, option Valorisation des Espaces Naturels. À
             l'époque, mon rêve était de devenir soigneur animalier, gardien des créatures de la
             nature. Cependant, le destin avait d'autres plans pour moi. Comme guidé par un vent
@@ -142,26 +160,24 @@ onMounted(() => {
         <section>
           <h2 id="competences">Compétences</h2>
           <h3>Outils</h3>
-          <div class="grid w-full grid-cols-5 gap-2">
+          <div class="grid w-full grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             <SkillAbout
-                v-for="card in skillsTool"
-                :key="card.id"
-                :type="card.type"
-                :name="card.name"
-                :data="card"
-              />
-
+              v-for="card in skillsTool"
+              :key="card.id"
+              :type="card.type"
+              :name="card.name"
+              :data="card"
+            />
           </div>
           <h3>Langages</h3>
-          <div class="grid w-full grid-cols-5 gap-2">
+          <div class="grid w-full grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             <SkillAbout
-                v-for="card in skillsLanguage"
-                :key="card.id"
-                :type="card.type"
-                :name="card.name"
-                :data="card"
-              />
-
+              v-for="card in skillsLanguage"
+              :key="card.id"
+              :type="card.type"
+              :name="card.name"
+              :data="card"
+            />
           </div>
         </section>
         <Separateur3 />

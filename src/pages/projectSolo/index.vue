@@ -6,8 +6,10 @@ import Separateur3 from '@/components/icons/separateur3.vue'
 import ImageTemplate from '@/components/ImageTemplate.vue'
 import btnDefault from '@/components/boutons/btnDefault.vue'
 import MenuAncre from '@/components/MenuAncre.vue'
+import Menu from '@/components/icons/Menu.vue'
+import MenuOverlay from '@/components/MenuOverlay.vue'
 import { useSeoMeta } from '@unhead/vue'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
 // Gestion du SEO
 useSeoMeta({
@@ -32,24 +34,40 @@ onMounted(() => {
     btn.remove();
   }
 })
+
+// Gestion du menu
+const showMenuOverlay = ref(false)
+
+const toggleMenuOverlay = () => {
+  showMenuOverlay.value = !showMenuOverlay.value
+}
+
+const closeMenuOverlay = () => {
+  showMenuOverlay.value = false
+}
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
+  <div class="fixed left-12 top-4 z-10 md:hidden">
+    <Menu @click="toggleMenuOverlay" />
+  </div>
+  <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay" class="fixed left-0 top-20" />
   <MenuAncre
     :items="[
       { id: 'Tales', label: 'Tales of Aeshan' },
       { id: 'Fiction', label: 'Les Immortels' },
       { id: 'Cartes', label: 'Les cartes d\'Aeshan' }
     ]"
+    class="hidden md:block"
   />
-  <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-32">
+  <div class="flex h-full flex-col gap-8 bg-[url(/ScrollBackground2.webp)] p-4 md:p-32">
     <div id="Tales" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
       <div>
         <h2>Idralwel - Tales of Aeshan</h2>
       </div>
-      <div class="flex gap-8 px-[124px]">
+      <div class="flex flex-col gap-4 px-4 md:flex-row md:gap-8 md:px-[124px]">
         <p class="text-largeText">
           Dans les profondeurs d'un monde virtuel, une légende prend vie. Laissez-moi vous conter
           l'épopée d'Idralwel - Tales of Aeshan, un projet né de la passion et forgé par la
@@ -61,7 +79,7 @@ onMounted(() => {
       <div>
         <h3>L'infini à portée de main</h3>
       </div>
-      <div class="flex gap-8 px-[124px]">
+      <div class="flex flex-col gap-4 px-4 md:flex-row md:gap-8 md:px-[124px]">
         <p>
           En 2014, tel un grimoire ancien, le projet s'ouvrit sous le nom mystérieux de "7 livres".
           Comme toute grande aventure, son chemin fut parsemé d'embûches et de détours. Pendant six
@@ -91,7 +109,7 @@ onMounted(() => {
         </p>
       </div>
       <Separateur3 />
-      <div class="w-fill px-32">
+      <div class="w-full px-4 md:px-32">
         <p>
           Pour conclure cette épopée, un chapitre inattendu s'est écrit dans l'histoire d'Idralwel -
           Tales of Aeshan. En mars 2024, les gardiens de ce monde virtuel ont pris la décision de
@@ -105,7 +123,7 @@ onMounted(() => {
         </p>
       </div>
       <Separateur3 />
-      <div class="flex gap-8">
+      <div class="flex flex-col gap-4 px-4 md:flex-row md:gap-8 md:px-32">
         <ImageTemplate
           imageUrl="/IdralwelAventurier.webp"
           caption="Capture de jeu représentant trois aventuriers"
@@ -122,7 +140,7 @@ onMounted(() => {
     <div id="Fiction" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
       <h2>Les Immortels</h2>
-      <div class="flex gap-8 px-[124px]">
+      <div class="flex flex-col gap-4 px-4 md:flex-row md:gap-8 md:px-[124px]">
         <p class="text-largeText">
           Dans les méandres d'Aeshan, un monde où la magie et le mystère s'entremêlent, une nouvelle
           voix s'élève. Les Immortels - Tales of Aeshan, une fiction sonore née en décembre 2023,
@@ -136,7 +154,7 @@ onMounted(() => {
       />
       <Separateur2 />
       <h3>L'art de conter par le son</h3>
-      <div class="flex gap-8 px-[124px]">
+      <div class="flex flex-col gap-4 px-4 md:flex-row md:gap-8 md:px-[124px]">
         <p>
           Imaginez un instant fermer les yeux et vous laisser porter par les sons d'un monde
           fantastique. C'est précisément ce que propose Les Immortels. Cette fiction sonore puise
@@ -169,7 +187,7 @@ onMounted(() => {
         imageUrl="/LesImmortelsIllustration2.webp"
         caption="Image générée par IA du couché de Valgus sur l'océan."
       />
-      <div class="w-fill px-32">
+      <div class="w-full px-4 md:px-32">
         <p>
           Les Immortels - Tales of Aeshan n'est pas qu'une simple extension d'un jeu vidéo. C'est
           une porte d'entrée auditive vers un monde de merveilles, une célébration de la narration
@@ -180,7 +198,7 @@ onMounted(() => {
       </div>
       <Separateur3 />
       <h3>Un nouveau monde</h3>
-      <div class="w-fill px-32">
+      <div class="w-full px-4 md:px-32">
         <p>
           Pour conclure cette épopée, un chapitre inattendu s'est écrit dans l'histoire d'Idralwel -
           Tales of Aeshan. En mars 2024, les gardiens de ce monde virtuel ont pris la décision de
@@ -200,7 +218,7 @@ onMounted(() => {
     <div id="Cartes" class="flex h-fit w-full flex-col items-center gap-8 bg-LightBrown py-8">
       <Separateur1 />
       <h2>Les cartes d'Aeshan</h2>
-      <div class="flex gap-8 px-[124px]">
+      <div class="flex flex-col gap-4 px-4 md:flex-row md:gap-8 md:px-[124px]">
         <p class="text-largeText">
           Dans les brumes mystérieuses d'Aeshan, un nouveau pouvoir s'éveille - les anciennes
           prophéties prennent vie entre vos mains, sous la forme de cartes qui vous permettent de
@@ -213,7 +231,7 @@ onMounted(() => {
       />
       <Separateur2 />
       <h3>Une nouvelle dimension</h3>
-      <div class="flex gap-8 px-[124px]">
+      <div class="flex flex-col gap-4 px-4 md:flex-row md:gap-8 md:px-[124px]">
         <p>
           Au cœur de l'univers enchanteur d'Aeshan, une nouvelle aventure se profile à l'horizon :
           un jeu de cartes à jouer et à collectionner, qui promet de captiver les amateurs de
@@ -238,3 +256,4 @@ onMounted(() => {
   </div>
   <button id="set" @click="$emit('custom-event', playlistIndex)">Bouton test</button>
 </template>
+

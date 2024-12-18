@@ -77,22 +77,22 @@ onMounted(() => {
     <MenuOverlay v-if="showMenuOverlay" @close="closeMenuOverlay" class="fixed left-0 top-20" />
 
     <!-- Placer les éléments "Tile" en utilisant des unités relatives -->
-    <div class="absolute" style="top: 350px; left: 700px">
+    <div class="absolute top-[150px] left-[50px] md:top-[350px] md:left-[700px]">
       <Tile>
         <RouterLink to="/projectSolo">Projets Perso</RouterLink>
       </Tile>
     </div>
-    <div class="absolute" style="top: 420px; left: 1074px">
+    <div class="absolute top-[220px] left-[50px] md:top-[420px] md:left-[1074px]">
       <Tile>
         <RouterLink to="/about">À Propos</RouterLink>
       </Tile>
     </div>
-    <div class="absolute" style="top: 280px; left: 170px">
+    <div class="absolute top-[290px] left-[50px] md:top-[280px] md:left-[170px]">
       <Tile>
         <RouterLink to="/realisations">Réalisations</RouterLink>
       </Tile>
     </div>
-    <div class="absolute" style="top: 30px; left: 730px">
+    <div class="absolute top-[360px] left-[50px] md:top-[30px] md:left-[730px]">
       <Tile>
         <a href="mailto:voxorproduction@gmail.com">Contact</a>
       </Tile>

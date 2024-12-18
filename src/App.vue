@@ -25,8 +25,8 @@ const handleCustomEvent = (value: any) => {
         <component :is="Component" @custom-event="(value: string[]) => handleCustomEvent(value)" />
       </Suspense>
     </RouterView>
-    <div class="fixed z-50 bottom-4 right-4">
-      <SoundBar :playlist="activeMusic" />
-    </div>
+    <div class="fixed z-50 bottom-4 left-1/2 transform -translate-x-1/2 md:left-auto md:right-4 md:transform-none">
+    <SoundBar :playlist="activeMusic" />
+  </div>
   </main>
 </template>

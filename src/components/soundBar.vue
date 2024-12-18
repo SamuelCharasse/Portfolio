@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col gap-2 rounded-lg bg-LightBrown p-4 shadow-md border-Brown border-2">
+  <div class="flex items-center gap-2 rounded-lg bg-LightBrown p-4 shadow-md border-Brown border-2 md:flex-col">
     <div class="flex gap-2 justify-between items-center">
       <button @click="playSound">Lire</button>
       <button @click="pauseSound">Stop</button>
       <button @click="playNextSound">Suivant</button>
     </div>
     <div class="flex flex-col">
-      <label for="volume">Volume: {{ volume }}</label>
+      <label for="volume" class="hidden md:block">Volume: {{ volume }}</label>
       <input
         type="range"
         id="volume"

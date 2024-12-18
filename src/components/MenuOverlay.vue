@@ -16,7 +16,6 @@ import Mdi_linktree from './icons/mdi_linktree.vue'
       <RouterLink class="hover:font-extrabold" to="/projectSolo">Projets personnels</RouterLink>
       <RouterLink class="hover:font-extrabold" to="/about">À propos</RouterLink>
       <RouterLink class="hover:font-extrabold" to="">Contact</RouterLink>
-      <RouterLink class="hover:font-extrabold" to="/legalmention">Mentions légales</RouterLink>
     </ul>
     <ul class="flex flex-shrink-0 flex-grow-0 items-center justify-start gap-8">
       <a href="https://github.com/SamuelCharasse" target="_blank" rel="noopener"
